@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import banner from '../assets/header-banner.webp';
+import banner2 from '../assets/header-banner2.webp';
+import garlands from '../assets/garlands3.png';
+import { getLanguageLinks, getNavLinks } from '../data/site';
+import type { Locale, PageKey } from '../data/site';
+
+interface Props {
+	locale: Locale;
+	page: PageKey;
+}
+
+const { locale, page } = Astro.props;
+const navLinks = getNavLinks(locale);
+const languageLinks = getLanguageLinks(locale, page);
+---
+
+<header class="px-0 pt-2 pb-0 min-[431px]:px-4 lg:px-8">
+	<div
+		class="relative mx-auto max-w-6xl overflow-visible rounded-t-[20vw] border-x border-b border-amber-200/90 bg-amber-700 shadow-[0_24px_60px_-30px_rgba(68,44,25,0.35)]"
+	>
+		<div class="relative -mx-[2px] overflow-hidden rounded-t-[9.2vw] lg:rounded-t-[100px]">
+			<Image src={banner} alt="Shri Guru Ravidass Temple banner" id="header-banner" width={1870} height={750} class="block h-auto w-full" />
+		</div>
+
+		<div class="relative overflow-visible [--header-unit:clamp(0.7rem,0.52rem+0.5vw,1rem)] [--garland-x:calc(var(--header-unit)*2.35)] [--garland-span:190%] min-[431px]:[--garland-span:200%] [--nav-row-height:clamp(1.4rem,6.2vw,1.95rem)] min-[431px]:[--nav-row-height:clamp(1.65rem,6.4vw,2.3rem)] [--nav-pad-x:clamp(0.45rem,1.8vw,0.8rem)] sm:[--nav-row-height:calc(var(--header-unit)*4)] sm:[--nav-pad-x:calc(var(--header-unit)*1.5)]">
+			<img
+				src={garlands.src}
+				alt=""
+				class="pointer-events-none absolute left-1/2 top-0 z-30 block h-auto w-[calc(var(--garland-span)+(var(--garland-x)*2))] max-w-none -translate-x-1/2 -translate-y-[10%] opacity-95 sm:left-[calc(2%+var(--garland-x)*-1)] sm:w-[calc(96%+(var(--garland-x)*2))] sm:translate-x-0"
+			/>
+
+			<nav class="relative z-20 bg-amber-100/90 backdrop-blur-md">
+				<ul class="grid grid-cols-2 border-t-2 border-amber-300/70 sm:grid-cols-4">
+{ navLinks.map((link) => (
+						<li class="border-amber-300/70 [&:nth-child(n+3)]:border-t-2 [&:nth-child(2n)]:border-l-2 sm:[&:nth-child(n+3)]:border-t-0 sm:[&:nth-child(2n)]:border-l-0 sm:border-r-2 sm:last:border-r-0">
+							<a
+								href={link.href}
+								aria-current={link.page === page ? 'page' : undefined}
+								class:list={[
+									'flex h-[var(--nav-row-height)] w-full items-center justify-center px-[var(--nav-pad-x)] text-center text-sm leading-tight font-semibold transition duration-200',
+									link.page === page
+										? 'bg-blue-900/80 text-amber-100/00 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
+										: 'bg-amber-200/90 text-blue-600/70 hover:bg-amber-100/50 hover:text-blue-950/50 text-shadow-invert',
+								]}
+							>
+								{link.label}
+							</a>
+						</li>
+)) }
+				</ul>
+			</nav>
+
+			<div class="absolute right-3 top-[calc(100%+0.75rem)] z-40 sm:right-6 lg:right-8">
+				<div class="glass-toggle inline-flex items-center gap-1.5 rounded-full p-1.5">
+					<span
+						aria-hidden="true"
+						class="ml-1 h-2.5 w-2.5 rounded-full bg-amber-300 shadow-[0_0_0_4px_rgba(255,215,124,0.14),0_0_18px_rgba(255,213,111,0.55)]"
+					></span>
+
+					{languageLinks.map((link) => (
+						<a
+							href={link.href}
+							aria-label={link.ariaLabel}
+							aria-current={link.active ? 'page' : undefined}
+							class:list={[
+								'glass-toggle__button',
+								link.active && 'glass-toggle__button--active',
+							]}
+						>
+							{link.label}
+						</a>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script define:vars={{ bannerSrc: banner.src, banner2Src: banner2.src }}>
+	const bannerImage = document.getElementById('header-banner');
+	const storageKey = 'header-banner-index';
+	const bannerFrame = bannerImage?.parentElement;
+
+	if (bannerImage && bannerFrame) {
+		const currentIndex = Number.parseInt(localStorage.getItem(storageKey) ?? '0', 10);
+		const nextSrc = currentIndex === 0 ? bannerSrc : banner2Src;
+
+		bannerImage.setAttribute('src', nextSrc);
+
+		if (currentIndex === 1) {
+			bannerFrame.classList.replace('rounded-t-[9.2vw]', 'rounded-t-[5vw]');
+			bannerFrame.classList.replace('lg:rounded-t-[100px]', 'lg:rounded-t-[50px]');
+		}
+
+		localStorage.setItem(storageKey, currentIndex === 0 ? '1' : '0');
+	}
+</script>

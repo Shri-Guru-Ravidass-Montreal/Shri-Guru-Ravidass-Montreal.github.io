@@ -1,0 +1,17 @@
+---
+import NagarKirtan2026Page from "@/components/pages/Events/NagarKirtan2026Page.astro";
+import { siteContent } from "@/data/site";
+import Layout from "@/layouts/Layout.astro";
+import backgroundEvents from "@/assets/background-events.jpg";
+const locale = "en" as const;
+---
+
+<Layout
+    title={siteContent[locale].eventsPage.title}
+    description={siteContent[locale].eventsPage.intro}
+    locale={locale}
+    page="nagarkirtan"
+    backgroundImage={backgroundEvents}
+>
+    <NagarKirtan2026Page locale={locale} />
+</Layout>

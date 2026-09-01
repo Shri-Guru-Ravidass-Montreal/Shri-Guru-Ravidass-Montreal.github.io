@@ -1,0 +1,19 @@
+---
+import EventsPage from "@/components/pages/EventsPage.astro";
+import { siteContent } from "@/data/site";
+import Layout from "@/layouts/Layout.astro";
+import backgroundEvents from "../../assets/background-events.jpg";
+import backgroundEventsGlass from "../../assets/background-events-glass.jpg";
+const locale = "pa" as const;
+---
+
+<Layout
+    title={siteContent[locale].eventsPage.title}
+    description={siteContent[locale].eventsPage.intro}
+    locale={locale}
+    page="events"
+    backgroundImage={backgroundEvents}
+    backgroundFallbackImage={backgroundEventsGlass}
+>
+    <EventsPage locale={locale} />
+</Layout>

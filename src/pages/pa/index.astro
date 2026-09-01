@@ -1,0 +1,17 @@
+---
+import HomePage from '@/components/pages/HomePage.astro';
+import { siteContent } from '@/data/site';
+import Layout from '@/layouts/Layout.astro';
+
+const locale = 'pa' as const;
+const meta = siteContent[locale].meta;
+---
+
+<Layout
+	title={meta.title}
+	description={meta.description}
+	locale={locale}
+	page="home"
+>
+	<HomePage locale={locale} />
+</Layout>

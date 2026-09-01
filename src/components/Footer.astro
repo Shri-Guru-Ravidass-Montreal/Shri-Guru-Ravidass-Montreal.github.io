@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-black.png';
+import { getFooterLinks } from '../data/site';
+import type { Locale } from '../data/site';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const groups = getFooterLinks(locale);
+const title = locale === 'en' ? 'Shri Guru Ravidass Temple' : 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ';
+const home = groups[0];
+const events = groups[1];
+const library = groups[2];
+const reach = groups[3];
+---
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <nav class="footer-group" aria-label={home.label}>
+      <a class="footer-group-title" href={home.href}>{home.label}</a>
+      <ul class="footer-sublinks">{home.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+    </nav>
+    <nav class="footer-group" aria-label={events.label}>
+      <a class="footer-group-title" href={events.href}>{events.label}</a>
+      <ul class="footer-sublinks">{events.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+    </nav>
+    <div class="footer-stack">
+      <nav class="footer-group" aria-label={library.label}>
+        <a class="footer-group-title" href={library.href}>{library.label}</a>
+        <ul class="footer-sublinks">{library.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+      </nav>
+      <nav class="footer-group" aria-label={reach.label}>
+        <a class="footer-group-title" href={reach.href}>{reach.label}</a>
+        <ul class="footer-sublinks">{reach.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>
+      </nav>
+    </div>
+    <div class="footer-logo"><Image src={logo} alt="Shri Guru Ravidass Temple logo" width={180} height={180} /></div>
+  </div>
+</footer>

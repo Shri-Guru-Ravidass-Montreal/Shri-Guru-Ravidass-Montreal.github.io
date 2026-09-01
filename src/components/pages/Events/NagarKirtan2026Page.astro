@@ -1,0 +1,120 @@
+---
+import { siteContent } from "@/data/site";
+
+import GlassCard from "@/components/ui/GlassCard.astro";
+
+import SectionHeader from "@/components/ui/SectionHeader.astro";
+
+import type { Locale } from "@/data/site";
+
+const { locale } = Astro.props as { locale: Locale };
+
+const content = siteContent[locale];
+
+const page = content.nagarKirtan2026Page;
+
+const linkedIntro = page.intro.split('\n\n').map((paragraph) => {
+	let parts: { text: string; href?: string }[] = [{ text: paragraph }];
+
+	for (const link of ('introLinks' in page ? page.introLinks : [])) {
+		parts = parts.flatMap((part) => {
+			if (part.href || !part.text.includes(link.text)) return [part];
+			return part.text.split(link.text).flatMap((text, index, all) => [
+				{ text },
+				...(index < all.length - 1 ? [{ text: link.text, href: link.href }] : []),
+			]);
+		});
+	}
+
+	return parts;
+});
+---
+
+<div class="page-stack">
+
+	<!-- 1. Historical / Event Introduction -->
+	<section class="site-section">
+		<GlassCard>
+			<SectionHeader title={page.introTitle} />
+			<div class="event-intro">
+				{linkedIntro.map((paragraph) => (
+					<p class="card-copy">
+						{paragraph.map((part) =>
+							part.href ? <a class="inline-content-link" href={part.href}>{part.text}</a> : part.text
+						)}
+					</p>
+				))}
+			</div>
+		</GlassCard>
+	</section>
+
+
+	<!-- 2. Programme + Map -->
+	<section class="site-section two-column">
+
+    <GlassCard>
+        <SectionHeader title={page.programmeTitle} />
+
+        <div class="programme">
+
+            {page.programme.map((day) => (
+                <div class="programme-day">
+
+                    <strong class="programme-date">
+                        {day.date}
+                    </strong>
+
+                    <div class="elements-centered">
+
+                        <div class="nagar-kirtan-member">
+                            {day.items.map((item) => (
+                                <div>{item.title}</div>
+                            ))}
+                        </div>
+
+                        <div class="nagar-kirtan-member">
+                            {day.items.map((item) => (
+                                <div>{item.time}</div>
+                            ))}
+                        </div>
+
+                    </div>
+
+                </div>
+            ))}
+
+        </div>
+    </GlassCard>
+
+
+		<GlassCard class="map-card">
+			<SectionHeader title={page.mapTitle} />
+			<div class="map-placeholder">Map loading...</div>
+		</GlassCard>
+
+	</section>
+
+
+	<!-- 4. Gathering / Community Invitation -->
+	<section class="site-section">
+		<GlassCard>
+			<SectionHeader title={page.gatheringTitle} />
+			<p class="card-copy">{page.gathering}</p>
+		</GlassCard>
+	</section>
+
+
+	<!-- 5. Contact Information -->
+	<section class="site-section">
+		<GlassCard>
+			<SectionHeader title={page.contactTitle} />
+
+			<div class="card-copy">
+				{page.contact.map((line) => (
+					<p>{line}</p>
+				))}
+			</div>
+		</GlassCard>
+	</section>
+
+</div>

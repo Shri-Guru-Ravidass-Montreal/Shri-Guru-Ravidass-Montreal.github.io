@@ -1,0 +1,17 @@
+---
+import GlassCard from './GlassCard.astro';
+import PrimaryButton from './PrimaryButton.astro';
+import type { EventData } from '../../data/site';
+import type { ImageMetadata } from 'astro';
+interface Props { event: EventData; mobileBackgroundImage?: ImageMetadata; }
+const { event, mobileBackgroundImage } = Astro.props;
+---
+<GlassCard class="event-card" mobileBackgroundImage={mobileBackgroundImage}>
+  <div>
+    <span class="event-kicker">Featured event</span>
+    <h2 class="card-title">{event.title}</h2>
+    <span class="event-date">{event.date}</span>
+    <span class="card-copy">{event.description}</span>
+  </div>
+  <PrimaryButton href={event.href}>{event.button}</PrimaryButton>
+</GlassCard>

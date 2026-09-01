@@ -1,0 +1,46 @@
+---
+import { getRoute, siteContent } from "../../data/site";
+import GlassCard from "../ui/GlassCard.astro";
+import PrimaryButton from "../ui/PrimaryButton.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import type { Locale } from "../../data/site";
+const { locale } = Astro.props as { locale: Locale };
+const content = siteContent[locale];
+---
+
+<div class="page-stack">
+    <section id="ambedkar-library" class="site-section">
+        <GlassCard class="library-banner">
+            <SectionHeader
+                eyebrow="Community Library"
+                title="Dr. B. R. Ambedkar Library"
+                intro={content.libraryPage.libraryBanner}
+            />
+            <!-- PrimaryButton href={`${getRoute(locale, "library")}#books`}
+                >{content.labels.books}</PrimaryButton
+            -->
+        </GlassCard>
+    </section>
+
+{ content.libraryPage.sections.map((section) => (
+    <section id={section.id} class="site-section">
+        {" "}
+        <GlassCard>{" "}
+            <SectionHeader title={section.title} intro={section.body} />
+
+{ section.details.length > 0 && (
+            <div class="detail-list">
+
+{ section.details.map(([title, body], index) => (
+                <article id={`detail-${index}`}>
+                    {" "}
+                    <h3>{title}</h3>{" "}
+                    <p class="card-copy">{body}</p>{" "}
+                </article>
+)) }
+            </div>
+) }
+        </GlassCard>{" "}
+    </section>
+)) }
+</div>

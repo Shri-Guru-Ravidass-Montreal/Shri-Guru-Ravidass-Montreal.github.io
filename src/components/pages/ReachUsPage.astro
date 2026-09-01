@@ -1,0 +1,116 @@
+---
+import { siteContent } from "../../data/site";
+import GlassCard from "../ui/GlassCard.astro";
+import PrimaryButton from "../ui/PrimaryButton.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import type { Locale } from "../../data/site";
+const { locale } = Astro.props as { locale: Locale };
+const content = siteContent[locale];
+const page = content.reachPage;
+
+const staffColors = [
+    "bg-amber-300",
+    "bg-rose-300",
+    "bg-emerald-300",
+];
+---
+
+<div class="page-stack">
+
+    <section class="site-section">
+        <GlassCard class="wine-card">
+            <SectionHeader eyebrow={page.staffPill} title={page.staffTitle} />
+            <div class="elements-3">
+                {content.staff.map((member, index) => (
+                    <div class="staff-member">
+                        <div class="staff-info">
+                            <span class="staff-role">
+                                <span class:list={[
+                                        "staff-role-indicator",
+                                        staffColors[index % staffColors.length],
+                                    ]}> </span>
+                                {member.role}
+                            </span>
+
+                            <strong>{member.name}</strong>
+                        </div>
+
+                        <a class="button button-secondary" href={member.phoneHref}>
+                            {member.phoneDisplay}
+                        </a>
+                    </div>
+                ))}
+            </div>
+        </GlassCard>
+    </section>
+
+    <section class="site-section two-column">
+        <GlassCard>
+            <SectionHeader title="Location & Opening Hours" />
+            <address class="card-copy">
+                <span>
+                    {page.address}
+                </span>
+            </address>
+            <h3 class="minor-title">{page.hoursTitle}</h3>
+            {page.hours.map((line) => <p class="card-copy"> {line} </p>)}
+        </GlassCard>
+        <GlassCard class="map-card">
+            <SectionHeader title="Map" />
+            <div class="map-placeholder">Map loading...</div>
+        </GlassCard>
+    </section>
+
+    <section class="site-section">
+        <GlassCard class="map-card">
+            <SectionHeader title="Parking Information" />
+            <div class="map-placeholder">Image loading...</div>
+        </GlassCard>
+    </section>
+
+    <section class="site-section">
+        <GlassCard>
+            <SectionHeader title={page.conductTitle} />
+            <ul class="clean-list">
+{ page.conduct.map((item) => 
+                <li> {item} </li>
+) }
+            </ul>
+        </GlassCard>
+    </section>
+
+    <section id="inquiries" class="site-section">
+        <GlassCard>
+            <SectionHeader title={page.formTitle} intro={page.formIntro} />
+            <form class="inquiry-form">
+                <label> {page.name} <input name="name" required /> </label>
+                <label>
+                    {page.email}
+                    <input name="email" type="email" required />
+                </label>
+                <label>
+                    {page.type}
+                    <select name="type">
+{ page.typeOptions.map((option) => (
+                        <option> {option} </option>
+)) }
+                    </select>
+                </label>
+                <label>
+                    {page.service}
+                    <select name="service">
+                        <option value="">Select a service</option>
+{ page.serviceOptions.map((option) => (
+                            <option> {option} </option>
+)) }
+                    </select>
+                </label>
+                <label class="full-width">
+                    {page.message}
+                    <textarea name="message" rows="5"> </textarea>
+                </label>
+                <PrimaryButton type="submit"> {page.submit} </PrimaryButton>
+            </form>
+        </GlassCard>
+    </section>
+</div>

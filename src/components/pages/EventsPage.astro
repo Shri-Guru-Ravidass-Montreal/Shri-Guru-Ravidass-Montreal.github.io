@@ -1,0 +1,34 @@
+---
+import { siteContent } from "../../data/site";
+import EventCard from "../ui/EventCard.astro";
+import GlassCard from "../ui/GlassCard.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import type { Locale } from "../../data/site";
+import backgroundEventsGlass from "../../assets/background-events-glass.jpg";
+const { locale } = Astro.props as { locale: Locale };
+const content = siteContent[locale];
+---
+
+<div class="page-stack">
+    <section id="nagar-kirtan" class="site-section">
+        <EventCard event={content.event} />
+    </section>
+    <section class="site-section">
+        <GlassCard class="calendar-card">
+            <SectionHeader
+                eyebrow="Calendar"
+                title={content.eventsPage.scheduleTitle}
+                intro={content.eventsPage.scheduleBody}
+            />
+            <div class="calendar-placeholder">
+                <span>Google Calendar embed placeholder</span>
+            </div>
+        </GlassCard>
+    </section>
+    <section class="site-section">
+        <GlassCard>
+            <SectionHeader title={content.eventsPage.pastTitle} />
+            <p class="card-copy">{content.eventsPage.pastBody}</p>
+        </GlassCard>
+    </section>
+</div>

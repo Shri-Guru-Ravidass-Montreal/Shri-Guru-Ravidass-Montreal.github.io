@@ -1,0 +1,7 @@
+---
+import ReachUsPage from '../components/pages/ReachUsPage.astro';
+import { siteContent } from '../data/site';
+import Layout from '../layouts/Layout.astro';
+const locale = 'en' as const;
+---
+<Layout title={siteContent[locale].reachPage.title} description={siteContent[locale].reachPage.intro} locale={locale} page="reach"><ReachUsPage locale={locale} /></Layout>

@@ -1,0 +1,10 @@
+---
+import type { ImageMetadata } from 'astro';
+interface Props { class?: string; as?: 'article' | 'section' | 'div'; mobileBackgroundImage?: ImageMetadata; }
+const { class: className = '', as = 'article', mobileBackgroundImage } = Astro.props;
+const Tag = as;
+---
+<Tag class:list={['glass-card', className, mobileBackgroundImage && 'glass-card--mobile-image']}>
+    {mobileBackgroundImage && <div class="glass-card-mobile-image" style={`background-image: url(${mobileBackgroundImage.src})`} aria-hidden="true"></div>}
+    <slot />
+</Tag>

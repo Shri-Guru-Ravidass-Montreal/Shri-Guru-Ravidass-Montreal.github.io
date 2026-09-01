@@ -1,0 +1,46 @@
+---
+import { getRoute, siteContent } from '../../data/site';
+import EventCard from '../ui/EventCard.astro';
+import GlassCard from '../ui/GlassCard.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import ServiceCard from '../ui/ServiceCard.astro';
+import type { Locale } from '../../data/site';
+
+const { locale } = Astro.props as { locale: Locale };
+const content = siteContent[locale];
+const reachHref = `${getRoute(locale, 'reach')}#inquiries`;
+---
+
+<div class="page-stack">
+  <section>
+    <EventCard event={content.event} buttonLabel={content.labels.details} />
+  </section>
+
+  <section class="site-section">
+    <GlassCard>
+      <SectionHeader title={content.home.aboutTitle} />
+      <div class="copy-grid">
+        {content.home.about.map((paragraph) => <p class="card-copy">{paragraph}</p>)}
+      </div>
+    </GlassCard>
+  </section>
+
+  <section class="site-section">
+    <GlassCard>
+      <SectionHeader title="Services" intro="Connect with the Gurdwara for information, arrangements, and bookings." />
+      <div class="service-grid">
+        {content.services.filter((service) => service.title !== 'Dr. B. R. Ambedkar Library').map((service) => <ServiceCard service={service} href={reachHref} />)}
+      </div>
+    </GlassCard>
+  </section>
+
+  <section class="site-section">
+    <GlassCard>
+      <SectionHeader title={content.home.helpTitle} />
+      <div class="help-layout">
+        <p class="card-copy">{content.home.help}</p>
+        <a class="button button-secondary" href={reachHref}>{content.labels.inquire}</a>
+      </div>
+    </GlassCard>
+  </section>
+</div>
