@@ -39,8 +39,8 @@ const routes: Record<Locale, Record<PageKey, string>> = {
 
 const event: EventData = { title: 'Religious Harmony Parade', date: 'September 6th', description: 'Public community event.', button: 'Details (Schedule, Route and Guidelines)', href: routes.en.nagarkirtan };
 const services: ServiceData[] = [
-  { title: 'Gurmat Classes', description: 'Learning and reflection for children, youth, and families.', image: templePlaceholder, alt: 'Placeholder image for Gurmat Classes' },
-  { title: 'Anand Karaj', description: 'Reach us to ask about Anand Karaj arrangements and availability.', image: templePlaceholder, alt: 'Placeholder image for Anand Karaj' },
+  { title: 'Gurmat Camp', description: 'Summer camp for children and youth.', image: templePlaceholder, alt: 'Placeholder image for Gurmat Camp' },
+  { title: 'Anand Karaj', description: 'Reach out for Anand Karaj arrangements.', image: templePlaceholder, alt: 'Placeholder image for Anand Karaj' },
   { title: 'Akhand Path', description: 'Inquire about planning and booking an Akhand Path.', image: templePlaceholder, alt: 'Placeholder image for Akhand Path' },
   { title: 'Dr. B. R. Ambedkar Library', description: 'A reference and education space beneath the Gurdwara.', image: templePlaceholder, alt: 'Placeholder image for the Dr. B. R. Ambedkar Library' },
 ];
@@ -75,15 +75,142 @@ const footerLinks: Record<Locale, FooterLinkGroup[]> = {
 };
 
 const englishLibrary = [
-  { id: 'sggs', title: 'Sri Guru Granth Sahib Ji', body: 'Our site provides access to Sri Guru Granth Sahib Ji, the eternal Guru of the Sikhs. It is the central scripture and spiritual authority of Sikh tradition.', details: [
-    ['About Sri Guru Granth Sahib Ji', 'Sri Guru Granth Sahib Ji developed from the Adi Granth compiled by Guru Arjan Dev Ji. It contains bani of six Sikh Gurus: Guru Nanak Dev Ji, Guru Angad Dev Ji, Guru Amar Das Ji, Guru Ram Das Ji, Guru Arjan Dev Ji, and Guru Tegh Bahadur Ji, as well as compositions of 15 Bhagats and other contributors.'],
-    ['Guru Nanak Dev Ji', 'Guru Nanak Dev Ji taught the oneness of the Creator, honest living, remembrance, and equality. His bani forms the foundation of the Sikh scriptural tradition.'],
-    ['Prakash & Guru Arjan Dev Ji', 'Guru Arjan Dev Ji compiled the Adi Granth and oversaw its first Prakash at Harmandir Sahib in 1604. Prakash refers to the ceremonial opening and presence of Sri Guru Granth Sahib Ji.'],
-    ['Guru Gobind Singh Ji', 'Guru Gobind Singh Ji affirmed Sri Guru Granth Sahib Ji as the eternal Guru of the Sikhs. His bani is not part of Sri Guru Granth Sahib Ji.'],
-  ] },
-  { id: 'ravidas', title: 'Guru Ravidas Ji', body: 'Guru Ravidas Ji was a beloved poet-saint whose teachings emphasize equality, devotion, inner freedom, and the dignity of all people. His bani appears in Sri Guru Granth Sahib Ji.', details: [] },
-  { id: 'bhagats', title: 'Bhagats', body: 'The principal Bhagats whose bani appears in Sri Guru Granth Sahib Ji include Sheikh Farid, Bhagat Kabir, Bhagat Namdev, Bhagat Trilochan, Bhagat Beni, Bhagat Dhanna, Bhagat Pipa, Bhagat Sadhna, Bhagat Sain, Bhagat Bhikhan, Bhagat Jaidev, Bhagat Ramanand, Bhagat Surdas, and Bhagat Parmanand. Guru Ravidas Ji has his own section above.', details: [] },
-  { id: 'saints', title: 'Saints', body: 'This section distinguishes people whose bani is in Sri Guru Granth Sahib Ji, people discussed in Sikh history and tradition, and later saints or referenced figures. Not every figure discussed here appears in Sri Guru Granth Sahib Ji.', details: [] },
+  {
+    id: 'ravidas',
+    title: 'Satguru Ravidass Ji',
+    body: 'Satguru Ravidass Ji was a mystic poet-saint of the Bhakti movement. He is venerated as a “Guru” (spiritual teacher).',
+
+    details: [
+      ['Life', 'Satguru Ravidass Ji was born in the village Seer Govardhanpur, near a religious center Kashi Banaras in the state of UP, in 1377 AD in the house of father Santokh Das and mother Kalsi Devi Ji. Guru Ji was married to Lona Devi, popularly called Mother Lona. A son was born to them. Guru Ji left for the heavenly abode at the age of 151 years in 1527 AD.'],
+
+      ['Teachings', 'Guru Ji taught and promoted personal spiritual freedom. Guru Ji also raised his voice against social divisions and casteism. Guru Ji spread a message of Begampura, a land without sorrows.'],
+
+      ['Bani in Sri Guru Granth Sahib Ji', 'His 40 sacred/heavenly verses in 16 Ragas and a Shaloka are included in Sri Guru Granth Sahib Ji.'],
+    ]
+  },
+
+  {
+    id: 'sggs',
+    title: 'Sri Guru Granth Sahib Ji',
+    body: 'Sri Guru Granth Sahib Ji is the eternal Guru of the Sikhs. It is the central scripture and spiritual authority of Sikh tradition.',
+
+    details: [
+      ['About Sri Guru Granth Sahib Ji', 'Sri Guru Granth Sahib Ji developed from the Adi Granth compiled by Guru Arjan Dev Ji. It contains the bani of six Sikh Gurus: Guru Nanak Dev Ji, Guru Angad Dev Ji, Guru Amar Das Ji, Guru Ram Das Ji, Guru Arjan Dev Ji, and Guru Tegh Bahadur Ji, as well as the writings of prominent Bhagats, Bhatts, and other contributors.'],
+
+      ['Guru Nanak Dev Ji', 'The founder of Sikhism, Sri Guru Nanak Dev Ji was born in 1469 AD in Rai Bhoye\'s Talwandi, Sri Nankana Sahib, to Kalyan Das Mehta Ji and Mata Tripta Devi Ji. Guru Ji was married to Bibi Sulakhani, and they had two sons, Baba Sri Chand Ji and Lakhmi Das Ji. Guru Ji made four Udasi journeys during his lifetime for the welfare of humanity. Guru Ji left for the heavenly abode in 1539 AD at Kartarpur, Pakistan. His bani includes 977 shabads recorded in 20 different Ragas in Sri Guru Granth Sahib Ji.'],
+
+      ['Sri Guru Arjan Dev Ji, Adi Granth & Prakash', 'The fifth Sikh Guru, Sri Guru Arjan Dev Ji, was born in 1563 AD at Goindwal Sahib to Sri Guru Ram Das Ji and Mata Bhani Ji. Guru Ji was married to Mata Ganga Ji. \n\nGuru Ji compiled the Adi Granth, which included the bani of the previous Sikh Gurus and Bhagats. In 1604 AD, Guru Ji arranged the first Prakash of Sri Guru Granth Sahib Ji at Sachkhand Sri Harmandir Sahib and appointed Giani Baba Buddha Sahib Ji as the first Head Granthi. \n\nGuru Ji gave martyrdom for the sake of religion and left for his heavenly abode in Lahore in 1606 AD.'],
+
+      ['Sri Guru Gobind Singh Ji', 'Sri Guru Gobind Singh Ji was born in 1666 AD at Patna Sahib to Sri Guru Tegh Bahadur Ji and Mata Gujri Ji. Guru Ji established the Khalsa Panth at Anandpur Sahib on the day of Baisakhi in 1699 AD. \n\nGuru Ji was the tenth light of Sri Guru Nanak Dev Ji and he is the last human Guru of Sikhs. He taught the Sikh Panth to oppose tyranny. Fighting for truth and against oppression, Guru Ji sacrificed his entire family and is popularly remembered as Sarbansdani. Guru Ji established Sri Guru Granth Sahib Ji as the eternal Guru of the Sikhs. Guru Ji left for his heavenly abode in 1708 AD at Nanded Sahib, Maharashtra.'],
+    ]
+  },
+
+  {
+    id: 'bhagats',
+    title: 'Bhagats',
+    body: 'Preserved in Sri Guru Granth Sahib Ji are the bani of saints and mystics from diverse backgrounds whose teachings explored devotion, humility, divine love, and the search for spiritual truth beyond worldly divisions.',
+
+    details: [
+      ['The Bhagats', 'Sheikh Farid Ji, Satguru Kabir Ji, Satguru Namdev Ji, Satguru Trilochan Ji, Satguru Beni Ji, Satguru Dhanna Ji, Satguru Pipa Ji, Satguru Sadhna Ji, Satguru Sain Ji, Satguru Bhikhan Ji, Satguru Jaidev Ji, Satguru Ramanand Ji, Satguru Surdas Ji, and Satguru Parmanand Ji.'],
+    ]
+  },
+
+  {
+    id: 'bhatt-bani',
+    title: 'Bhatts',
+    body: 'The bani of 11 Bhatts is included in Sri Guru Granth Sahib Ji. Their compositions are principally found in the form of Savaiye.',
+
+    details: [
+      ['The 11 Bhatts', 'Kalshar Ji, Gyand Ji, Kirat Ji, Mathura Ji, Balh Ji, Nalh Ji, Bhika Ji, Salh Ji, Bhalh Ji, Jalap Ji, and Das Ji.'],
+      ['Bani', 'The Bhatts contributed Savaiye in praise of the Sikh Gurus, which are recorded in Sri Guru Granth Sahib Ji.'],
+    ]
+  },
+
+  {
+    id: 'other-contributors',
+    title: 'Other Contributors',
+
+    details: [
+      ['Bhai Mardana Ji', 'Bhai Mardana Ji was a lifelong companion of Guru Nanak Dev Ji. Two shabads attributed to Bhai Mardana Ji are included in Sri Guru Granth Sahib Ji.'],
+
+      ['Baba Sundar Ji', 'Baba Sundar Ji composed Ramkali Sadu, a bani included in Sri Guru Granth Sahib Ji.'],
+
+      ['Bhai Satta Ji and Bhai Balwand Ji', 'Bhai Satta Ji and Bhai Balwand Ji composed Ramkali Ki Vaar, which is included in Sri Guru Granth Sahib Ji.'],
+    ]
+  },
+
+];
+
+const punjabiLibrary = [
+
+  {
+    id: 'ravidas',
+    title: 'ਸਤਿਗੁਰੂ ਰਵਿਦਾਸ ਜੀ',
+    body: 'ਸਤਿਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਭਗਤੀ ਲਹਿਰ ਦੇ ਇੱਕ ਮਹਾਨ ਰਹੱਸਵਾਦੀ ਕਵੀ-ਸੰਤ ਸਨ। ਆਪ ਜੀ ਨੂੰ ਗੁਰੂ, ਅਰਥਾਤ ਆਤਮਿਕ ਅਧਿਆਪਕ, ਵਜੋਂ ਸਤਿਕਾਰਿਆ ਜਾਂਦਾ ਹੈ।',
+
+    details: [
+
+      ['ਜੀਵਨ', 'ਆਪ ਜੀ ਦਾ ਜਨਮ 1433 ਸੰਮਤ ਨੂੰ ਉੱਤਰ ਪ੍ਰਦੇਸ਼ ਦੇ ਧਾਰਮਿਕ ਕੇਂਦਰ ਬਨਾਰਸ ਦੇ ਲਾਗੇ ਪਿੰਡ ਸੀਰ ਗੋਵਰਧਨਪੁਰ ਵਿੱਚ ਪਿਤਾ ਸੰਤੋਖ ਦਾਸ ਅਤੇ ਮਾਤਾ ਕਲਸੀ ਦੇਵੀ ਜੀ ਦੇ ਘਰ ਹੋਇਆ। ਆਪ ਜੀ ਦੀ ਸ਼ਾਦੀ ਮਾਤਾ ਲੋਨਾ ਦੇ ਨਾਲ ਹੋਈ ਅਤੇ ਆਪ ਜੀ ਦੇ ਘਰ ਇੱਕ ਪੁੱਤਰ ਨੇ ਜਨਮ ਲਿਆ। ਆਪ ਜੀ 151 ਸਾਲ ਦੀ ਉਮਰ ਭੋਗ ਕੇ 1584 ਸੰਮਤ ਨੂੰ ਬਨਾਰਸ ਵਿਖੇ ਜੋਤੀ ਜੋਤ ਸਮਾ ਗਏ।'],
+
+      ['ਸਿੱਖਿਆਵਾਂ', 'ਗੁਰੂ ਜੀ ਨੇ ਨਿੱਜੀ ਅਧਿਆਤਮਿਕ ਸੁਤੰਤਰਤਾ ਲਈ ਸਿੱਖਿਆ ਅਤੇ ਪ੍ਰਚਾਰ ਕੀਤਾ। ਗੁਰੂ ਜੀ ਨੇ ਸਮਾਜਿਕ ਵੰਡ ਅਤੇ ਜਾਤੀਵਾਦ ਦੇ ਵਿਰੁੱਧ ਆਪਣੀ ਆਵਾਜ਼ ਬੁਲੰਦ ਕੀਤੀ। ਗੁਰੂ ਜੀ ਨੇ ਪੂਰੀ ਮਾਨਵਤਾ ਲਈ ਬੇਗਮਪੁਰਾ, ਗਮਾਂ ਤੋਂ ਰਹਿਤ ਸੰਸਾਰ ਸਿਰਜਣ ਦਾ ਉਪਦੇਸ਼ ਆਪਣੀ ਬਾਣੀ ਵਿੱਚ ਦਰਸਾਇਆ।'],
+
+      ['ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਬਾਣੀ', 'ਆਪ ਜੀ ਦੀ ਰਚੀ ਬਾਣੀ ਦੇ 40 ਸ਼ਬਦ 16 ਰਾਗਾਂ ਵਿੱਚ ਅਤੇ ਇੱਕ ਸਲੋਕ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹਨ।'],
+
+    ]
+  },
+
+  {
+    id: 'sggs',
+    title: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ',
+    body: 'ਸਾਡੀ ਵੈੱਬਸਾਈਟ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਤੱਕ ਪਹੁੰਚ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ, ਜੋ ਸਿੱਖਾਂ ਦੇ ਸਦੀਵੀ ਗੁਰੂ ਹਨ। ਇਹ ਸਿੱਖ ਧਰਮ ਦਾ ਕੇਂਦਰੀ ਧਾਰਮਿਕ ਗ੍ਰੰਥ ਅਤੇ ਅਧਿਆਤਮਿਕ ਅਧਿਕਾਰ ਹਨ.',
+
+    details: [
+
+      ['ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਬਾਰੇ', 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦਾ ਵਿਕਾਸ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਵੱਲੋਂ ਸੰਪਾਦਿਤ ਆਦਿ ਗ੍ਰੰਥ ਤੋਂ ਹੋਇਆ। ਇਸ ਵਿੱਚ ਛੇ ਸਿੱਖ ਗੁਰੂ ਸਾਹਿਬਾਨ — ਸ੍ਰੀ ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ, ਸ੍ਰੀ ਗੁਰੂ ਅੰਗਦ ਦੇਵ ਜੀ, ਸ੍ਰੀ ਗੁਰੂ ਅਮਰ ਦਾਸ ਜੀ, ਸ੍ਰੀ ਗੁਰੂ ਰਾਮ ਦਾਸ ਜੀ, ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਅਤੇ ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ — ਦੀ ਬਾਣੀ ਦੇ ਨਾਲ 15 ਭਗਤਾਂ, 11 ਭੱਟਾਂ ਅਤੇ 4 ਹੋਰ ਯੋਗਦਾਨੀਆਂ ਦੀ ਬਾਣੀ ਦਰਜ ਹੈ।'],
+
+      ['ਸ੍ਰੀ ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ', 'ਸਿੱਖ ਧਰਮ ਦੇ ਬਾਨੀ ਸ੍ਰੀ ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ 1469 ਈ: ਨੂੰ ਰਾਏ ਭੋਏ ਦੀ ਤਲਵੰਡੀ ਸ੍ਰੀ ਨਨਕਾਣਾ ਸਾਹਿਬ ਵਿਖੇ ਪਿਤਾ ਕਲਿਆਣ ਦਾਸ ਮਹਿਤਾ ਜੀ ਅਤੇ ਮਾਤਾ ਤ੍ਰਿਪਤਾ ਜੀ ਦੇ ਘਰ ਹੋਇਆ। ਆਪ ਜੀ ਦੀ ਛੋਟੀ ਬੀਬੀ ਸੁਲੱਖਣੀ ਨਾਲ ਸ਼ਾਦੀ ਹੋਈ ਅਤੇ ਆਪ ਜੀ ਦੇ ਦੋ ਸੁਪੁੱਤਰ ਬਾਬਾ ਸ੍ਰੀ ਚੰਦ ਜੀ ਤੇ ਲਖਮੀ ਦਾਸ ਜੀ ਹੋਏ। ਆਪ ਜੀ ਨੇ ਆਪਣੇ ਜੀਵਨ ਕਾਲ ਦੌਰਾਨ ਮਾਨਵਤਾ ਦੀ ਖਾਤਰ ਚਾਰ ਉਦਾਸੀਆਂ ਕੀਤੀਆਂ। ਆਪ ਜੀ 70 ਸਾਲ ਦੀ ਆਯੂ ਭੋਗ ਕੇ 1539 ਈ: ਨੂੰ ਕਰਤਾਰਪੁਰ, ਪਾਕਿਸਤਾਨ ਵਿਖੇ ਜੋਤੀ ਜੋਤ ਸਮਾ ਗਏ। ਆਪ ਜੀ ਦੀ ਬਾਣੀ ਦੇ 977 ਸ਼ਬਦ 20 ਵੱਖ-ਵੱਖ ਰਾਗਾਂ ਵਿੱਚ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਅੰਕਿਤ ਹਨ।'],
+
+      ['ਪ੍ਰਕਾਸ਼ ਅਤੇ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ', 'ਧੰਨ ਧੰਨ ਸ੍ਰੀ ਗੁਰੂ ਅਰਜਨ ਦੇਵ ਜੀ ਮਹਾਰਾਜ ਨੇ 1604 ਈ: ਨੂੰ ਸੱਚਖੰਡ ਸ੍ਰੀ ਹਰਿਮੰਦਰ ਸਾਹਿਬ ਵਿੱਚ ਧੰਨ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦਾ ਪਹਿਲਾ ਪ੍ਰਕਾਸ਼ ਕਰਵਾ ਕੇ ਧੰਨ ਧੰਨ ਗਿਆਨੀ ਬਾਬਾ ਬੁੱਢਾ ਸਾਹਿਬ ਜੀ ਨੂੰ ਪਹਿਲਾ ਹੈੱਡ ਗ੍ਰੰਥੀ ਬਣਾਇਆ। ਪ੍ਰਕਾਸ਼ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਪਾਵਨ ਸਰੂਪ ਦੇ ਰਸਮੀ ਉਦਘਾਟਨ ਅਤੇ ਹਜ਼ੂਰੀ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ।'],
+
+      ['ਸ੍ਰੀ ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਜੀ', 'ਧੰਨ ਧੰਨ ਸ੍ਰੀ ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਜੀ ਦਾ ਪ੍ਰਕਾਸ਼ ਸ੍ਰੀ ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ ਜੀ ਅਤੇ ਮਾਤਾ ਗੁਜਰੀ ਜੀ ਦੇ ਘਰ ਪਟਨਾ ਸਾਹਿਬ ਵਿਖੇ 1666 ਈ: ਨੂੰ ਹੋਇਆ। ਆਪ ਜੀ ਨੇ 1699 ਈ: ਨੂੰ ਵਿਸਾਖੀ ਵਾਲੇ ਦਿਨ ਅਨੰਦਪੁਰ ਸਾਹਿਬ ਵਿਖੇ ‘ਖਾਲਸਾ’ ਪੰਥ ਦੀ ਸਥਾਪਨਾ ਕੀਤੀ।\n\nਗੁਰੂ ਜੀ ਨੇ ਸੱਚ ਲਈ ਲੜਨਾਂ ਤੇ ਜ਼ੁਲਮ ਦੀ ਰੋਕਥਾਮ ਕਰਨ ਦਾ ਉਪਦੇਸ਼ ਸਿੱਖ ਪੰਥ ਨੂੰ ਦਿੱਤਾ। ਜ਼ਬਰ ਜ਼ੁਲਮ ਖਿਲਾਫ ਅਤੇ ਸੱਚ ਲਈ ਲੜਦੇ ਹੋਏ ਆਪਣਾ ਸਾਰਾ ਪਰਿਵਾਰ ਸਰਬੰਸ ਵਾਰ ਦਿੱਤਾ। ਗੁਰੂ ਰੂਪ ਕੇ 42 ਸਾਲ ਦੀ ਉਮਰ ਭੋਗਦੇ ਹੋਏ ਆਪ ਜੀ 1708 ਈ: ਨੂੰ ਨੰਦੇੜ ਸਾਹਿਬ ਮਹਾਰਾਸ਼ਟਰ ਵਿਖੇ ਜੋਤੀ ਜੋਤ ਸਮਾ ਗਏ।'],
+
+    ]
+  },
+
+  {
+    id: 'bhagats',
+    title: 'ਭਗਤ',
+    body: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਵੱਖ-ਵੱਖ ਪਿਛੋਕੜਾਂ ਨਾਲ ਸੰਬੰਧਿਤ ਸੰਤਾਂ ਅਤੇ ਰਹੱਸਵਾਦੀਆਂ ਦੀ ਬਾਣੀ ਦਰਜ ਹੈ, ਜਿਨ੍ਹਾਂ ਦੀਆਂ ਸਿੱਖਿਆਵਾਂ ਭਗਤੀ, ਨਿਮਰਤਾ, ਰੱਬੀ ਪ੍ਰੇਮ ਅਤੇ ਸੰਸਾਰਕ ਵੰਡਾਂ ਤੋਂ ਉੱਪਰ ਆਤਮਿਕ ਸੱਚ ਦੀ ਖੋਜ ਨੂੰ ਦਰਸਾਉਂਦੀਆਂ ਹਨ।',
+    
+    details: [
+      ['ਭਗਤ ਸਾਹਿਬਾਨ', 'ਸ਼ੇਖ ਫਰੀਦ ਜੀ, ਸਤਿਗੁਰੂ ਕਬੀਰ ਜੀ, ਸਤਿਗੁਰੂ ਨਾਮਦੇਵ ਜੀ, ਸਤਿਗੁਰੂ ਤ੍ਰਿਲੋਚਨ ਜੀ, ਸਤਿਗੁਰੂ ਬੇਣੀ ਜੀ, ਸਤਿਗੁਰੂ ਧੰਨਾ ਜੀ, ਸਤਿਗੁਰੂ ਪੀਪਾ ਜੀ, ਸਤਿਗੁਰੂ ਸਧਨਾ ਜੀ, ਸਤਿਗੁਰੂ ਸੈਣ ਜੀ, ਸਤਿਗੁਰੂ ਭੀਖਨ ਜੀ, ਸਤਿਗੁਰੂ ਜੈਦੇਵ ਜੀ, ਸਤਿਗੁਰੂ ਰਾਮਾਨੰਦ ਜੀ, ਸਤਿਗੁਰੂ ਸੂਰਦਾਸ ਜੀ ਅਤੇ ਸਤਿਗੁਰੂ ਪਰਮਾਨੰਦ ਜੀ।'],
+    ]
+  },
+
+  {
+    id: 'bhatt-bani',
+    title: 'ਭੱਟ',
+    body: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ 11 ਭੱਟਾਂ ਦੀ ਬਾਣੀ ਦਰਜ ਹੈ। ਭੱਟਾਂ ਦੀ ਬਾਣੀ ਮੁੱਖ ਤੌਰ ਤੇ ਸਵੱਈਆਂ ਦੇ ਰੂਪ ਵਿੱਚ ਦਰਜ ਹੈ।',
+
+    details: [
+      ['11 ਭੱਟ', 'ਕਲਸ਼ਹਾਰ ਜੀ, ਗਯੰਦ ਜੀ, ਕੀਰਤ ਜੀ, ਮਥੁਰਾ ਜੀ, ਬਲ੍ਹ ਜੀ, ਨਲ੍ਹ ਜੀ, ਭੀਖਾ ਜੀ, ਸਲ੍ਹ ਜੀ, ਭਲ੍ਹ ਜੀ, ਜਲਪ ਜੀ ਅਤੇ ਦਾਸ ਜੀ।'],
+      ['ਬਾਣੀ', 'ਭੱਟਾਂ ਨੇ ਸਿੱਖ ਗੁਰੂ ਸਾਹਿਬਾਨ ਦੀ ਉਸਤਤ ਵਿੱਚ ਸਵੱਈਏ ਰਚੇ, ਜੋ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹਨ।'],
+    ]
+  },
+
+  {
+    id: 'other-contributors',
+    title: 'ਹੋਰ ਯੋਗਦਾਨੀ',
+
+    details: [
+      ['ਭਾਈ ਮਰਦਾਨਾ ਜੀ', 'ਭਾਈ ਮਰਦਾਨਾ ਜੀ ਸ੍ਰੀ ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ ਦੇ ਜੀਵਨ ਭਰ ਦੇ ਸਾਥੀ ਸਨ। ਭਾਈ ਮਰਦਾਨਾ ਜੀ ਨਾਲ ਸੰਬੰਧਿਤ ਦੋ ਸ਼ਬਦ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹਨ।'],
+
+      ['ਬਾਬਾ ਸੁੰਦਰ ਜੀ', 'ਬਾਬਾ ਸੁੰਦਰ ਜੀ ਦੀ ਰਚਨਾ ਰਾਮਕਲੀ ਸਦੁ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹੈ।'],
+
+      ['ਭਾਈ ਸੱਤਾ ਜੀ ਅਤੇ ਭਾਈ ਬਲਵੰਡ ਜੀ', 'ਭਾਈ ਸੱਤਾ ਜੀ ਅਤੇ ਭਾਈ ਬਲਵੰਡ ਜੀ ਦੀ ਰਚਨਾ ਰਾਮਕਲੀ ਕੀ ਵਾਰ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਵਿੱਚ ਦਰਜ ਹੈ।'],
+    ]
+  },
+
 ];
 
 const form = { address: '8205 Durocher, Montreal, QC H3N 2A8', hoursTitle: 'Opening Hours', hours: ['Saturday & Sunday', '10:00 AM – 5:00 PM'], conductTitle: 'Etiquette & Guidelines', conduct: ['Please dress appropriately; Pants need to be under knee-length.', 'Please leave your shoes in the cloakroom and wash your feet before entering any other room.', 'You will be asked to cover your head with a cloth; Handkerchiefs are available on-site.'], formTitle: 'Inquiries & Booking', formIntro: 'Use this form for a general inquiry, service inquiry, or event/service booking.', name: 'Name', email: 'Email', type: 'Inquiry type', typeOptions: ['General inquiry', 'Service inquiry', 'Event/service booking'], service: 'Service', serviceOptions: services.map(({ title }) => title), message: 'Message', submit: 'Send inquiry' };
@@ -212,7 +339,7 @@ export const siteContent = {
     nav: { home: 'Home', events: 'Events', library: 'Library', reach: 'Reach Us' },
     labels: { learnMore: 'Learn more', inquire: 'Inquiries & Booking', details: 'Event details', books: '“Browse the library books”'},
     event, services, staff,
-    home: { eyebrow: 'Montreal Sangat', title: 'A place for sangat, seva, and shared prayer.', intro: 'Shri Guru Ravidass Temple brings the community together in the spirit of devotion, learning, and service.', aboutTitle: 'About Us', about: ['Shri Guru Ravidass Temple is a Gurdwara and community Sabha serving sangat in Montreal and surrounding communities.', 'It provides a place for prayer, education, cultural connection, and support through the Sikh tradition and the teachings of Guru Ravidas Ji.', 'Our Gurdwara continues a living tradition of sangat and seva: welcoming families, preserving memory, and making space for the next generation.'], helpTitle: 'How To Help', help: 'Seva is voluntary service offered with humility and care. New volunteers should first defer to existing sevadars and follow the direction and procedures they provide. Donation is another way to help. For anything else, please reach us.' },
+    home: { eyebrow: 'Montreal Sangat', title: 'A place for sangat, seva, and shared prayer.', intro: 'Shri Guru Ravidass Temple brings the community together in the spirit of devotion, learning, and service.', aboutTitle: 'About Us', about: ['Shri Guru Ravidass Temple is a Gurdwara and community Sabha serving sangat in Montreal and surrounding communities.', 'It provides a place for prayer, education, cultural connection, and support through the Sikh tradition and the teachings of Guru Ravidas Ji.', 'Our Gurdwara continues a living tradition of sangat and seva: welcoming families, preserving memory, and making space for the next generation.'], helpTitle: 'How To Help', help: 'Our temple can only keep going thanks to our volunteers and donors. To start volunteering, please ask our sevadars for training. For nonphysical donations, please contact us.' },
     eventsPage: { title: 'Events', intro: 'Gatherings, celebrations, and community updates from the Gurdwara.', nextTitle: 'Next Event', scheduleTitle: 'Google Schedule', scheduleBody: 'The schedule will appear here once the calendar is connected.', pastTitle: 'Past & Upcoming', pastBody: 'Nagar Kirtan is currently the featured event. This section can grow as more dates are confirmed.' },
       nagarKirtan2026Page: englishNagarKirtan2026,
     libraryPage: { title: 'Library', intro: 'An educational and reference section for learning about Gurbani, Sikh history, and the spiritual figures connected to this tradition.', sections: englishLibrary, libraryBanner: 'The Dr. B. R. Ambedkar Library is located under the Gurdwara premises and supports education, reflection, and community learning.' },
@@ -226,7 +353,7 @@ export const siteContent = {
     home: { eyebrow: 'ਮੋਂਟਰੀਅਲ ਸੰਗਤ', title: 'ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਸਾਂਝੀ ਅਰਦਾਸ ਲਈ ਥਾਂ।', intro: 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ ਸੰਗਤ ਨੂੰ ਭਗਤੀ, ਸਿੱਖਿਆ ਅਤੇ ਸੇਵਾ ਦੀ ਭਾਵਨਾ ਨਾਲ ਜੋੜਦਾ ਹੈ।', aboutTitle: 'ਸਾਡੇ ਬਾਰੇ', about: ['ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ ਮੋਂਟਰੀਅਲ ਅਤੇ ਆਲੇ-ਦੁਆਲੇ ਦੀ ਸੰਗਤ ਦੀ ਸੇਵਾ ਕਰਨ ਵਾਲਾ ਗੁਰਦੁਆਰਾ ਅਤੇ ਸਭਾ ਹੈ।', 'ਇਹ ਸਿੱਖ ਪਰੰਪਰਾ ਅਤੇ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਦੀਆਂ ਸਿੱਖਿਆਵਾਂ ਰਾਹੀਂ ਅਰਦਾਸ, ਸਿੱਖਿਆ, ਸੱਭਿਆਚਾਰਕ ਸਾਂਝ ਅਤੇ ਸਹਾਇਤਾ ਲਈ ਥਾਂ ਦਿੰਦਾ ਹੈ।', 'ਸਾਡਾ ਗੁਰਦੁਆਰਾ ਸੰਗਤ ਅਤੇ ਸੇਵਾ ਦੀ ਜੀਵੰਤ ਪਰੰਪਰਾ ਨੂੰ ਅੱਗੇ ਲੈ ਜਾਂਦਾ ਹੈ।'], helpTitle: 'ਮਦਦ ਕਿਵੇਂ ਕਰੀਏ', help: 'ਸੇਵਾ ਨਿਮਰਤਾ ਅਤੇ ਪਿਆਰ ਨਾਲ ਕੀਤੀ ਜਾਣ ਵਾਲੀ ਸਵੈ-ਇੱਛਕ ਸੇਵਾ ਹੈ। ਨਵੇਂ ਸੇਵਾਦਾਰ ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਸੇਵਾਦਾਰਾਂ ਦੀ ਰਹਿਨੁਮਾਈ ਅਤੇ ਪ੍ਰਕਿਰਿਆ ਦੀ ਪਾਲਣਾ ਕਰਨ। ਦਾਨ ਵੀ ਮਦਦ ਦਾ ਇੱਕ ਰਸਤਾ ਹੈ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਸੰਪਰਕ ਕਰੋ।' },
     eventsPage: { title: 'ਸਮਾਗਮ', intro: 'ਗੁਰਦੁਆਰੇ ਦੇ ਸਮਾਗਮ ਅਤੇ ਸੰਗਤ ਨਾਲ ਜੁੜੀਆਂ ਜਾਣਕਾਰੀਆਂ।', nextTitle: 'ਅਗਲਾ ਸਮਾਗਮ', scheduleTitle: 'ਗੂਗਲ ਸਮਾਂ-ਸੂਚੀ', scheduleBody: 'ਕੈਲੰਡਰ ਜੋੜਨ ਤੋਂ ਬਾਅਦ ਸਮਾਂ-ਸੂਚੀ ਇੱਥੇ ਦਿਖਾਈ ਜਾਵੇਗੀ।', pastTitle: 'ਪੁਰਾਣੇ ਅਤੇ ਆਉਣ ਵਾਲੇ ਸਮਾਗਮ', pastBody: 'ਨਗਰ ਕੀਰਤਨ ਇਸ ਸਮੇਂ ਮੁੱਖ ਸਮਾਗਮ ਹੈ।' },
       nagarKirtan2026Page: punjabiNagarKirtan2026,
-    libraryPage: { title: 'ਲਾਇਬ੍ਰੇਰੀ', intro: 'ਗੁਰਬਾਣੀ, ਸਿੱਖ ਇਤਿਹਾਸ ਅਤੇ ਇਸ ਪਰੰਪਰਾ ਨਾਲ ਜੁੜੇ ਆਤਮਿਕ ਵਿਅਕਤੀਆਂ ਬਾਰੇ ਸਿੱਖਿਆ ਅਤੇ ਹਵਾਲਾ ਸਮੱਗਰੀ।', sections: englishLibrary.map((section) => ({ ...section, title: section.title })), libraryBanner: 'ਗੁਰਦੁਆਰੇ ਦੇ ਹੇਠਾਂ ਸਥਿਤ ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਲਾਇਬ੍ਰੇਰੀ ਸਿੱਖਿਆ ਅਤੇ ਭਾਈਚਾਰਕ ਸਿੱਖਣ ਲਈ ਹੈ।' },
+    libraryPage: { title: 'ਲਾਇਬ੍ਰੇਰੀ', intro: 'ਗੁਰਬਾਣੀ, ਸਿੱਖ ਇਤਿਹਾਸ ਅਤੇ ਇਸ ਪਰੰਪਰਾ ਨਾਲ ਜੁੜੇ ਆਤਮਿਕ ਵਿਅਕਤੀਆਂ ਬਾਰੇ ਸਿੱਖਿਆ ਅਤੇ ਹਵਾਲਾ ਸਮੱਗਰੀ।', sections: punjabiLibrary, libraryBanner: 'ਗੁਰਦੁਆਰੇ ਦੇ ਹੇਠਾਂ ਸਥਿਤ ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਲਾਇਬ੍ਰੇਰੀ ਸਿੱਖਿਆ ਅਤੇ ਭਾਈਚਾਰਕ ਸਿੱਖਣ ਲਈ ਹੈ।' },
     reachPage: { title: 'ਸੰਪਰਕ', intro: 'ਗੁਰਦੁਆਰੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ, ਸਥਾਨ ਲੱਭੋ ਅਤੇ ਪੁੱਛਗਿੱਛ ਜਾਂ ਬੁਕਿੰਗ ਭੇਜੋ।', staffTitle: 'ਸਾਡੇ ਸੇਵਾਦਾਰ', staffPill: 'ਗੁਰ ਘਰ ਸੰਪਰਕ', ...form, hoursTitle: 'ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ', conductTitle: 'ਮਰਿਆਦਾ', formTitle: 'ਪੁੱਛਗਿੱਛ ਅਤੇ ਬੁਕਿੰਗ', formIntro: 'ਆਮ ਪੁੱਛਗਿੱਛ, ਸੇਵਾ ਜਾਂ ਸਮਾਗਮ/ਸੇਵਾ ਬੁਕਿੰਗ ਲਈ ਫਾਰਮ ਵਰਤੋ।', name: 'ਨਾਮ', email: 'ਈਮੇਲ', type: 'ਪੁੱਛਗਿੱਛ ਦੀ ਕਿਸਮ', message: 'ਸੁਨੇਹਾ', submit: 'ਪੁੱਛਗਿੱਛ ਭੇਜੋ' },
   },
 } as const;

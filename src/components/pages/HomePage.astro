@@ -29,7 +29,7 @@ const reachHref = `${getRoute(locale, 'reach')}#inquiries`;
     <GlassCard>
       <SectionHeader title="Services" intro="Connect with the Gurdwara for information, arrangements, and bookings." />
       <div class="service-grid">
-        {content.services.filter((service) => service.title !== 'Dr. B. R. Ambedkar Library').map((service) => <ServiceCard service={service} href={reachHref} />)}
+        {content.services.map((service) => <ServiceCard service={service} href={reachHref} />)}
       </div>
     </GlassCard>
   </section>

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import banner from '../assets/header-banner.webp';
+import banner from '../assets/header-banner3.webp';
 import banner2 from '../assets/header-banner2.webp';
 import garlands from '../assets/garlands2874x578.png';
 import { getLanguageLinks, getNavLinks } from '../data/site';
@@ -41,7 +41,7 @@ const languageLinks = getLanguageLinks(locale, page);
 								class:list={[
 									'flex h-[var(--nav-row-height)] w-full items-center justify-center px-[var(--nav-pad-x)] text-center text-sm leading-tight font-semibold transition duration-200',
 									link.page === page
-										? 'bg-blue-900/80 text-amber-100/00 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
+										? 'bg-[#DABB50] text-amber-100/00 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]'
 										: 'bg-amber-200/90 text-blue-600/70 hover:bg-amber-100/50 hover:text-blue-950/50 text-shadow-invert',
 								]}
 							>
