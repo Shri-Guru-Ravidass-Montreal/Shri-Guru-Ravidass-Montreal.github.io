@@ -220,13 +220,13 @@ a { text-decoration: none; }
   gap: 1.25rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
-  background: linear-gradient(135deg, rgba(126, 135, 206, 0.274), 	rgba(17, 54, 155, 0.123));
+  background: linear-gradient(135deg, rgba(49, 59, 134, 0.27), 	rgba(17, 54, 155, 0.123));
   padding: clamp(1.25rem, 3vw, 2rem);
   box-shadow: 0 24px 60px -40px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); 
 }
 .glass-card:not(.glass-card--mobile-image) { transform: translateZ(0); }
-.glass-card { background: linear-gradient(135deg, rgba(126, 135, 206, 0.18), rgba(17, 54, 155, 0.08)); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-card--mobile-image { isolation: isolate; overflow: hidden; backdrop-filter: none; -webkit-backdrop-filter: none; background: transparent !important; }
   .glass-card--mobile-image .glass-card-mobile-image { display: block; position: absolute; z-index: 0; inset: 0; border-radius: inherit; background-position: center top; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
