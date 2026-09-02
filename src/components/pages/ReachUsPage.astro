@@ -54,6 +54,8 @@ const staffColors = [
             </address>
             <h3 class="minor-title">{page.hoursTitle}</h3>
             {page.hours.map((line) => <p class="card-copy"> {line} </p>)}
+            <h3 class="minor-title">{page.langarTitle}</h3>
+            {page.langarHours.map((line) => <p class="card-copy"> {line} </p>)}
         </GlassCard>
         <GlassCard class="map-card">
             <SectionHeader title="Map" />
