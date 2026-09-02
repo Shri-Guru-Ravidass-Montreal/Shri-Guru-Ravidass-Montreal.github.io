@@ -16,12 +16,12 @@ const content = siteContent[locale];
     <section class="site-section">
         <GlassCard class="calendar-card">
             <SectionHeader
-                eyebrow="Calendar"
+                eyebrow={content.labels.calendarLabel}
                 title={content.eventsPage.scheduleTitle}
                 intro={content.eventsPage.scheduleBody}
             />
             <div class="calendar-placeholder">
-                <span>Google Calendar embed placeholder</span>
+                <span>{content.labels.calendarPlaceholder}</span>
             </div>
         </GlassCard>
     </section>

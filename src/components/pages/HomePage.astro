@@ -27,7 +27,7 @@ const reachHref = `${getRoute(locale, 'reach')}#inquiries`;
 
   <section class="site-section">
     <GlassCard>
-      <SectionHeader title="Services" intro="Connect with the Gurdwara for information, arrangements, and bookings." />
+      <SectionHeader title={content.labels.servicesTitle} intro={content.labels.servicesIntro} />
       <div class="service-grid">
         {content.services.map((service) => <ServiceCard service={service} href={reachHref} />)}
       </div>

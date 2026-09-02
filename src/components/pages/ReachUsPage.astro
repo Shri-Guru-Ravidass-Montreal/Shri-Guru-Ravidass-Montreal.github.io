@@ -46,7 +46,7 @@ const staffColors = [
 
     <section class="site-section two-column">
         <GlassCard>
-            <SectionHeader title="Location & Opening Hours" />
+            <SectionHeader title={content.labels.locationTitle} />
             <address class="card-copy">
                 <span>
                     {page.address}
@@ -58,14 +58,14 @@ const staffColors = [
             {page.langarHours.map((line) => <p class="card-copy"> {line} </p>)}
         </GlassCard>
         <GlassCard class="map-card">
-            <SectionHeader title="Map" />
-            <div class="map-placeholder">Map loading...</div>
+            <SectionHeader title={content.labels.map} />
+            <div class="map-placeholder">{content.labels.map}...</div>
         </GlassCard>
     </section>
 
     <section class="site-section">
         <GlassCard class="map-card">
-            <SectionHeader title="Parking Information" />
+            <SectionHeader title={content.labels.parking} />
             <div class="map-placeholder">Image loading...</div>
         </GlassCard>
     </section>
@@ -101,7 +101,7 @@ const staffColors = [
                 <label>
                     {page.service}
                     <select name="service">
-                        <option value="">Select a service</option>
+                        <option value="">{content.labels.selectService}</option>
 { page.serviceOptions.map((option) => (
                             <option> {option} </option>
 )) }
