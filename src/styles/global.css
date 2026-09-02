@@ -226,8 +226,9 @@ a { text-decoration: none; }
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px); 
 }
-.glass-card:not(.glass-card--mobile-image) { transform: translateZ(0); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+
+    .glass-card:not(.glass-card--mobile-image) { transform: translateZ(0); }
   .glass-card--mobile-image { isolation: isolate; overflow: hidden; backdrop-filter: none; -webkit-backdrop-filter: none; background: transparent !important; }
   .glass-card--mobile-image .glass-card-mobile-image { display: block; position: absolute; z-index: 0; inset: 0; border-radius: inherit; background-position: center top; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
   .glass-card--mobile-image::after { content: ''; position: absolute; z-index: 1; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(33, 45, 39, 0.38), rgba(15, 22, 20, 0.58)); pointer-events: none; }
