@@ -231,10 +231,10 @@ const punjabiForm = { address: '8205 ਡੂਰੋਸ਼ਰ, ਮੋਂਟਰੀ�
 const englishNagarKirtan2026 = {
     introTitle: 'Nagar Kirtan 2026',
     intro: "Guru Arjan Dev Ji Maharaj, in 1604 CE, arranged the first Prakash of Sri Guru Granth Sahib Ji at Sachkhand Sri Harmandir Sahib and appointed Baba Buddha Sahib Ji as the first Head Granthi. \n\n" +
-"The 422nd Prakash Dihara of Sri Guru Granth Sahib Ji and the 649th Prakash Purab of Sri Guru Ravidas Ji Maharaj will be celebrated with great devotion and care, through the cooperation of the entire Sikh Sangat, in the form of a Nagar Kirtan.",
+"The 422nd Prakash Dihara of Sri Guru Granth Sahib Ji and the 649th Prakash Purab of Sri Guru Ravidass Ji Maharaj will be celebrated with great devotion and care, through the cooperation of the entire Sikh Sangat, in the form of a Nagar Kirtan.",
     introLinks: [
       { text: 'first Prakash of Sri Guru Granth Sahib Ji', href: '/library#sggs' },
-      { text: 'Prakash Purab of Sri Guru Ravidas Ji', href: '/library#ravidas' },
+      { text: 'Prakash Purab of Sri Guru Ravidass Ji', href: '/library#ravidas' },
     ],
 
     programmeTitle: 'Program',
@@ -282,7 +282,7 @@ const englishNagarKirtan2026 = {
         'Chief Sevadar',
         'Sansar Chand Suad',
         '438-871-7777',
-        'Management Committee, Sri Guru Ravidas Sabha and all Sevadars',
+        'Management Committee, Sri Guru Ravidass Sabha and all Sevadars',
         '8205 Rue Durocher, Park-Ex, Montreal, QC, H3N 2A8',
     ],
 }
@@ -351,7 +351,7 @@ export const siteContent = {
     nav: { home: 'Home', events: 'Events', library: 'Library', reach: 'Reach Us' },
     labels: { learnMore: 'Learn more', inquire: 'Inquiries & Booking', details: 'Event details', books: '“Browse the library books”', servicesTitle: 'Services', servicesIntro: 'Connect with the Gurdwara for information, arrangements, and bookings.', calendarLabel: 'Calendar', calendarPlaceholder: 'Google Calendar embed placeholder', locationTitle: 'Location & Opening Hours', map: 'Map', parking: 'Parking Information', selectService: 'Select a service'},
     event, services, staff,
-    home: { eyebrow: 'Montreal Sangat', title: 'A place for sangat, seva, and shared prayer.', intro: 'Shri Guru Ravidass Temple brings the community together in the spirit of devotion, learning, and service.', aboutTitle: 'About Us', about: ['Shri Guru Ravidass Temple is a Gurdwara and community Sabha serving sangat in Montreal and surrounding communities.', 'It provides a place for prayer, education, cultural connection, and support through the Sikh tradition and the teachings of Guru Ravidas Ji.', 'Our Gurdwara continues a living tradition of sangat and seva: welcoming families, preserving memory, and making space for the next generation.'], helpTitle: 'How To Help', help: 'Our temple can only keep going thanks to our volunteers and donors. To start volunteering, please ask our sevadars for training. For nonphysical donations, please contact us.' },
+    home: { eyebrow: 'Montreal Sangat', title: 'A place for sangat, seva, and shared prayer.', intro: 'Shri Guru Ravidass Temple brings the community together in the spirit of devotion, learning, and service.', aboutTitle: 'About Us', about: ['Shri Guru Ravidass Temple is a Gurdwara and community Sabha serving sangat in Montreal and surrounding communities.', 'It provides a place for prayer, education, cultural connection, and support through the Sikh tradition and the teachings of Guru Ravidass Ji.', 'Our Gurdwara continues a living tradition of sangat and seva: welcoming families, preserving memory, and making space for the next generation.'], helpTitle: 'How To Help', help: 'Our temple can only keep going thanks to our volunteers and donors. To start volunteering, please ask our sevadars for training. For nonphysical donations, please contact us.' },
     eventsPage: { title: 'Events', intro: 'Gatherings, celebrations, and community updates from the Gurdwara.', nextTitle: 'Next Event', scheduleTitle: 'Google Schedule', scheduleBody: 'The schedule will appear here once the calendar is connected.', pastTitle: 'Past & Upcoming', pastBody: 'Nagar Kirtan is currently the featured event. This section can grow as more dates are confirmed.' },
       nagarKirtan2026Page: englishNagarKirtan2026,
     libraryPage: { title: 'Library', intro: 'An educational and reference section for learning about Gurbani, Sikh history, and the spiritual figures connected to this tradition.', sections: englishLibrary, libraryBanner: 'The Dr. B. R. Ambedkar Library is located under the Gurdwara premises and supports education, reflection, and community learning.' },
