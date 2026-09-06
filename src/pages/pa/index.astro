@@ -2,7 +2,7 @@
 import HomePage from '@/components/pages/HomePage.astro';
 import { siteContent } from '@/data/site';
 import Layout from '@/layouts/Layout.astro';
-
+import backgroundHome from "@/assets/background-darbar.jpg";
 const locale = 'pa' as const;
 const meta = siteContent[locale].meta;
 ---
@@ -11,6 +11,7 @@ const meta = siteContent[locale].meta;
 	title={meta.title}
 	description={meta.description}
 	locale={locale}
+	backgroundImage={backgroundHome}
 	page="home"
 >
 	<HomePage locale={locale} />

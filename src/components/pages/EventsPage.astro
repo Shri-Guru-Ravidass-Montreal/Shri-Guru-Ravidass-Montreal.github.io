@@ -4,7 +4,6 @@ import EventCard from "../ui/EventCard.astro";
 import GlassCard from "../ui/GlassCard.astro";
 import SectionHeader from "../ui/SectionHeader.astro";
 import type { Locale } from "../../data/site";
-import backgroundEventsGlass from "../../assets/background-events-glass.jpg";
 const { locale } = Astro.props as { locale: Locale };
 const content = siteContent[locale];
 ---
@@ -20,8 +19,29 @@ const content = siteContent[locale];
                 title={content.eventsPage.scheduleTitle}
                 intro={content.eventsPage.scheduleBody}
             />
-            <div class="calendar-placeholder">
-                <span>{content.labels.calendarPlaceholder}</span>
+            <div class="calendar-container">
+
+                <div class="calendar-container">
+                    <!-- Desktop -->
+                    <iframe
+                        class="calendar-desktop"
+                        src="https://calendar.google.com/calendar/embed?src=5ea8c023125c940f5723c8e3d0a1c13efdb1bcec6cbbebce1f96a9e1bc4b69b8%40group.calendar.google.com&ctz=America%2FToronto&mode=MONTH&showTitle=0&showPrint=0&showCalendars=0&showTz=0"
+                        title="Shri Guru Ravidass Temple events calendar"
+                        loading="lazy"
+                        frameborder="0"
+                        scrolling="no"
+                    ></iframe>
+
+                    <!-- Mobile -->
+                    <iframe
+                        class="calendar-mobile"
+                        src="https://calendar.google.com/calendar/embed?src=5ea8c023125c940f5723c8e3d0a1c13efdb1bcec6cbbebce1f96a9e1bc4b69b8%40group.calendar.google.com&ctz=America%2FToronto&mode=AGENDA&showTitle=0&showPrint=0&showCalendars=0&showTz=0"
+                        title="Shri Guru Ravidass Temple upcoming events"
+                        loading="lazy"
+                        frameborder="0"
+                        scrolling="no"
+                    ></iframe>
+                </div>
             </div>
         </GlassCard>
     </section>

@@ -1,7 +1,17 @@
 ---
-import LibraryPage from '../components/pages/LibraryPage.astro';
-import { siteContent } from '../data/site';
-import Layout from '../layouts/Layout.astro';
-const locale = 'en' as const;
+import LibraryPage from "@/components/pages/LibraryPage.astro";
+import { siteContent } from "@/data/site";
+import Layout from "@/layouts/Layout.astro";
+import backgroundHome from "@/assets/background-library.jpg";
+const locale = "en" as const;
 ---
-<Layout title={siteContent[locale].libraryPage.title} description={siteContent[locale].libraryPage.intro} locale={locale} page="library"><LibraryPage locale={locale} /></Layout>
+
+<Layout
+    title={siteContent[locale].libraryPage.title}
+    description={siteContent[locale].libraryPage.intro}
+    locale={locale}
+    backgroundImage={backgroundHome}
+    page="library"
+>
+    <LibraryPage locale={locale} />
+</Layout>

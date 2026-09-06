@@ -59,14 +59,29 @@ const staffColors = [
         </GlassCard>
         <GlassCard class="map-card">
             <SectionHeader title={content.labels.map} />
-            <div class="map-placeholder">{content.labels.map}...</div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    {content.labels.map}...
+                </div>
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.3576525042!2d-73.6392892590744!3d45.53332247119558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919030c30d701%3A0xd2fe41ce95d9e226!2sShri%20Guru%20Ravidass%20Temple%20Gurbani%20Sagar!5e1!3m2!1sen!2sca!4v1788628201742!5m2!1sen!2sca"
+                    width="100%"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    title="Shri Guru Ravidass Temple Gurbani Sagar location map"
+                ></iframe>
+            </div>
         </GlassCard>
     </section>
 
     <section class="site-section">
         <GlassCard class="map-card">
             <SectionHeader title={content.labels.parking} />
-            <div class="map-placeholder">Image loading...</div>
+            <div class="map-container">
+                <div class="map-placeholder">Image loading...</div>
         </GlassCard>
     </section>
 
