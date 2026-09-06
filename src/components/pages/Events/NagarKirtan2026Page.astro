@@ -87,10 +87,12 @@ const linkedIntro = page.intro.split('\n\n').map((paragraph) => {
     </GlassCard>
 
 
-		<GlassCard class="map-card">
-			<SectionHeader title={page.mapTitle} />
-			<div class="map-placeholder">Map loading...</div>
-		</GlassCard>
+        <GlassCard class="map-card">
+            <SectionHeader title={content.labels.parking} />
+            <div class="map-container">
+                <div class="map-placeholder">Image loading...</div>
+            </div>
+        </GlassCard>
 
 	</section>
 
