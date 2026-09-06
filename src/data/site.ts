@@ -51,13 +51,13 @@ const punjabiServices: ServiceData[] = [
   { title: 'ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਲਾਇਬ੍ਰੇਰੀ', description: 'ਗੁਰਦੁਆਰੇ ਦੇ ਹੇਠਾਂ ਸਥਿਤ ਹਵਾਲਾ ਅਤੇ ਸਿੱਖਿਆ ਕੇਂਦਰ।', image: templePlaceholder, alt: 'ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਲਾਇਬ੍ਰੇਰੀ ਲਈ ਪਲੇਸਹੋਲਡਰ ਤਸਵੀਰ' },
 ];
 const staff: StaffMember[] = [
-  { role: 'Pres.', name: 'Sansar Chand Suad', phoneDisplay: '(438) 871-7777', phoneHref: 'tel:+14388717777' },
-  { role: 'VP', name: 'Binder Chand', phoneDisplay: '(514) 571-9548', phoneHref: 'tel:+15145719548' },
+  { role: 'Pres.', name: 'Sansar Chand Swan', phoneDisplay: '(438) 871-7777', phoneHref: 'tel:+14388717777' },
+  { role: 'VP', name: 'Binder Chander', phoneDisplay: '(514) 571-9548', phoneHref: 'tel:+15145719548' },
   { role: 'GSec.', name: 'Shami Banga', phoneDisplay: '(514) 296-7251', phoneHref: 'tel:+15142967251' },
 ];
 const punjabiStaff: StaffMember[] = [
-  { role: 'ਪ੍ਰਧਾਨ', name: 'ਸੰਸਾਰ ਚੰਦ ਸੁਆਦ', phoneDisplay: '438-871-7777', phoneHref: 'tel:+14388717777' },
-  { role: 'ਵਾਈਸ ਪ੍ਰਧਾਨ', name: 'ਬਿੰਦਰ ਚੰਦ', phoneDisplay: '514-571-9548', phoneHref: 'tel:+15145719548' },
+  { role: 'ਪ੍ਰਧਾਨ', name: 'ਸੰਸਾਰ ਚੰਦ ਸੁਆਣ', phoneDisplay: '438-871-7777', phoneHref: 'tel:+14388717777' },
+  { role: 'ਵਾਈਸ ਪ੍ਰਧਾਨ', name: 'ਬਿੰਦਰ ਚੰਦੜ', phoneDisplay: '514-571-9548', phoneHref: 'tel:+15145719548' },
   { role: 'ਜਨਰਲ ਸਕੱਤਰ', name: 'ਸਾਮੀ ਬੰਗਾ', phoneDisplay: '514-296-7251', phoneHref: 'tel:+15142967251' },
 ];
 
@@ -351,7 +351,7 @@ export const siteContent = {
     nav: { home: 'Home', events: 'Events', library: 'Library', reach: 'Reach Us' },
     labels: { learnMore: 'Learn more', inquire: 'Inquiries & Booking', details: 'Event details', books: '“Browse the library books”', servicesTitle: 'Services', servicesIntro: 'Connect with the Gurdwara for information, arrangements, and bookings.', calendarLabel: 'Calendar', calendarPlaceholder: 'Google Calendar embed placeholder', locationTitle: 'Location & Opening Hours', map: 'Map', parking: 'Parking Information', selectService: 'Select a service'},
     event, services, staff,
-    home: { eyebrow: 'Montreal Sangat', title: 'A place for sangat, seva, and shared prayer.', intro: 'Shri Guru Ravidass Temple brings the community together in the spirit of devotion, learning, and service.', aboutTitle: 'About Us', about: ['Since 1997, our community has stood together, giving shape to our Guru Ghar.', 'Today, it is a living space for spirituality and learning, centred around the teachings of Sri Guru Ravidass Ji. ', 'It holds a future for the generations ahead, as it continues weaving togetherness, serenity and memories. ' ]},
+    home: { eyebrow: 'Montreal Sangat', title: 'A place for sangat, seva, and shared prayer.', intro: 'Shri Guru Ravidass Temple brings the community together in the spirit of devotion, learning, and service.', aboutTitle: 'About Us', about: ['Since 1997, our community has stood together, giving shape to our Guru Ghar.', 'Today, it is a living space for spirituality and learning, centred around the teachings of Sri Guru Ravidass Ji. ', 'It holds a future for the generations ahead, as it continues weaving togetherness, serenity and memories. ' ], helpTitle: 'How To Help', help: 'Our temple can only keep going thanks to our volunteers and donors. To start volunteering, please ask our sevadars for training. For nonphysical donations, please contact us.' },
     eventsPage: { title: 'Events', intro: 'Gatherings, celebrations, and community updates from the Gurdwara.', nextTitle: 'Next Event', scheduleTitle: 'Google Schedule', scheduleBody: 'Daily: Rehras Sahib Path @ 7:00 PM - 7:30 PM', pastTitle: 'Past & Upcoming', pastBody: 'Nagar Kirtan is currently the featured event. This section can grow as more dates are confirmed.' },
       nagarKirtan2026Page: englishNagarKirtan2026,
     libraryPage: { title: 'Library', intro: 'An educational and reference section for learning about Gurbani, Sikh history, and the spiritual figures connected to this tradition.', sections: englishLibrary, libraryBanner: 'The Dr. B. R. Ambedkar Library is located under the Gurdwara premises and supports education, reflection, and community learning.' },
@@ -362,7 +362,7 @@ export const siteContent = {
     nav: { home: 'ਮੁੱਖ ਪੰਨਾ', events: 'ਸਮਾਗਮ', library: 'ਲਾਇਬ੍ਰੇਰੀ', reach: 'ਸੰਪਰਕ' },
     labels: { learnMore: 'ਹੋਰ ਜਾਣੋ', inquire: 'ਪੁੱਛਗਿੱਛ ਅਤੇ ਬੁਕਿੰਗ', details: 'ਸਮਾਗਮ ਦੀ ਜਾਣਕਾਰੀ', books: '“ਲਾਇਬ੍ਰੇਰੀ ਦੀਆਂ ਕਿਤਾਬਾਂ ਵੇਖੋ”', servicesTitle: 'ਸੇਵਾਵਾਂ', servicesIntro: 'ਜਾਣਕਾਰੀ, ਪ੍ਰਬੰਧਾਂ ਅਤੇ ਬੁਕਿੰਗ ਲਈ ਗੁਰਦੁਆਰੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।', calendarLabel: 'ਕੈਲੰਡਰ', calendarPlaceholder: 'ਗੂਗਲ ਕੈਲੰਡਰ ਜੋੜਨ ਤੋਂ ਬਾਅਦ ਇੱਥੇ ਦਿਖਾਈ ਦੇਵੇਗਾ।', locationTitle: 'ਸਥਾਨ ਅਤੇ ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ', map: 'ਨਕਸ਼ਾ', parking: 'ਪਾਰਕਿੰਗ ਦੀ ਜਾਣਕਾਰੀ', selectService: 'ਸੇਵਾ ਚੁਣੋ'},
     event: { title: 'ਹਰਿ ਮਹਾਨ ਨਗਰ ਕੀਰਤਨ', date: '06 ਸਤੰਬਰ 2026 ਦਿਨ ਐਤਵਾਰ', description: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ 422 ਵੇਂ ਪ੍ਰਕਾਸ਼ ਦਿਹਾੜੇ ਅਤੇ ਧੰਨ ਧੰਨ ਸ੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਮਹਾਰਾਜ ਦੇ 649 ਵੇਂ ਪ੍ਰਕਾਸ਼ ਪੁਰਬ ਨੂੰ ਸਮਰਪਿਤ।', button: 'ਸਮਾਗਮ ਦੀ ਜਾਣਕਾਰੀ', href: routes.pa.nagarkirtan }, services: punjabiServices, staff: punjabiStaff,
-    home: { eyebrow: 'ਮੋਂਟਰੀਅਲ ਸੰਗਤ', title: 'ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਸਾਂਝੀ ਅਰਦਾਸ ਲਈ ਥਾਂ।', intro: 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ ਸੰਗਤ ਨੂੰ ਭਗਤੀ, ਸਿੱਖਿਆ ਅਤੇ ਸੇਵਾ ਦੀ ਭਾਵਨਾ ਨਾਲ ਜੋੜਦਾ ਹੈ।', aboutTitle: 'ਸਾਡੇ ਬਾਰੇ', about: [ '1997 ਤੋਂ ਸਾਡੀ ਸੰਗਤ ਇਕੱਠੀ ਹੋ ਕੇ, ਆਪਣੇ ਗੁਰੂ ਘਰ ਦੀ ਨੀਂਹ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰਦੀ ਆ ਰਹੀ ਹੈ।', 'ਅੱਜ ਇਹ ਅਧਿਆਤਮਿਕਤਾ ਅਤੇ ਸਿੱਖਿਆ ਦਾ ਇੱਕ ਜੀਵੰਤ ਕੇਂਦਰ ਹੈ, ਜੋ ਸ੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਦੀ ਬਾਣੀ ਅਤੇ ਸਿਧਾਂਤਾਂ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ।', 'ਇਹ ਆਉਣ ਵਾਲੀਆਂ ਪੀੜ੍ਹੀਆਂ ਲਈ ਇੱਕ ਮਜ਼ਬੂਤ ਨੀਂਹ ਹੈ, ਜਿਸ ਰਾਹੀਂ ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਗੁਰਮਤਿ ਦਾ ਸਿਲਸਿਲਾ ਅੱਗੇ ਵਧਦਾ ਰਹੇ।'], helpTitle: 'ਮਦਦ ਕਿਵੇਂ ਕਰੀਏ', help: 'ਸੇਵਾ ਨਿਮਰਤਾ ਅਤੇ ਪਿਆਰ ਨਾਲ ਕੀਤੀ ਜਾਣ ਵਾਲੀ ਸਵੈ-ਇੱਛਕ ਸੇਵਾ ਹੈ। ਨਵੇਂ ਸੇਵਾਦਾਰ ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਸੇਵਾਦਾਰਾਂ ਦੀ ਰਹਿਨੁਮਾਈ ਅਤੇ ਪ੍ਰਕਿਰਿਆ ਦੀ ਪਾਲਣਾ ਕਰਨ। ਦਾਨ ਵੀ ਮਦਦ ਦਾ ਇੱਕ ਰਸਤਾ ਹੈ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਸੰਪਰਕ ਕਰੋ।' },
+    home: { eyebrow: 'ਮੋਂਟਰੀਅਲ ਸੰਗਤ', title: 'ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਸਾਂਝੀ ਅਰਦਾਸ ਲਈ ਥਾਂ।', intro: 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ ਸੰਗਤ ਨੂੰ ਭਗਤੀ, ਸਿੱਖਿਆ ਅਤੇ ਸੇਵਾ ਦੀ ਭਾਵਨਾ ਨਾਲ ਜੋੜਦਾ ਹੈ।', aboutTitle: 'ਸਾਡੇ ਬਾਰੇ', about: ['1997 ਤੋਂ ਸਾਡੀ ਸੰਗਤ ਇਕੱਠੀ ਹੋ ਕੇ, ਆਪਣੇ ਗੁਰੂ ਘਰ ਦੀ ਨੀਂਹ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰਦੀ ਆ ਰਹੀ ਹੈ।', 'ਅੱਜ ਇਹ ਅਧਿਆਤਮਿਕਤਾ ਅਤੇ ਸਿੱਖਿਆ ਦਾ ਇੱਕ ਜੀਵੰਤ ਕੇਂਦਰ ਹੈ, ਜੋ ਸ੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਦੀ ਬਾਣੀ ਅਤੇ ਸਿਧਾਂਤਾਂ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ।', 'ਇਹ ਆਉਣ ਵਾਲੀਆਂ ਪੀੜ੍ਹੀਆਂ ਲਈ ਇੱਕ ਮਜ਼ਬੂਤ ਨੀਂਹ ਹੈ, ਜਿਸ ਰਾਹੀਂ ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਗੁਰਮਤਿ ਦਾ ਸਿਲਸਿਲਾ ਅੱਗੇ ਵਧਦਾ ਰਹੇ।'] , helpTitle: 'ਮਦਦ ਕਿਵੇਂ ਕਰੀਏ', help: 'ਸੇਵਾ ਨਿਮਰਤਾ ਅਤੇ ਪਿਆਰ ਨਾਲ ਕੀਤੀ ਜਾਣ ਵਾਲੀ ਸਵੈ-ਇੱਛਕ ਸੇਵਾ ਹੈ। ਨਵੇਂ ਸੇਵਾਦਾਰ ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਸੇਵਾਦਾਰਾਂ ਦੀ ਰਹਿਨੁਮਾਈ ਅਤੇ ਪ੍ਰਕਿਰਿਆ ਦੀ ਪਾਲਣਾ ਕਰਨ। ਦਾਨ ਵੀ ਮਦਦ ਦਾ ਇੱਕ ਰਸਤਾ ਹੈ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਸੰਪਰਕ ਕਰੋ।' },
     eventsPage: { title: 'ਸਮਾਗਮ', intro: 'ਗੁਰਦੁਆਰੇ ਦੇ ਸਮਾਗਮ ਅਤੇ ਸੰਗਤ ਨਾਲ ਜੁੜੀਆਂ ਜਾਣਕਾਰੀਆਂ।', nextTitle: 'ਅਗਲਾ ਸਮਾਗਮ', scheduleTitle: 'ਗੂਗਲ ਸਮਾਂ-ਸੂਚੀ', scheduleBody: 'ਰੋਜ਼ਾਨਾ: ਰਹਿਰਾਸ ਸਾਹਿਬ ਪਾਠ @ ਸ਼ਾਮ 7:00 ਵਜੇ - 7:30 ਵਜੇ', pastTitle: 'ਪੁਰਾਣੇ ਅਤੇ ਆਉਣ ਵਾਲੇ ਸਮਾਗਮ', pastBody: 'ਨਗਰ ਕੀਰਤਨ ਇਸ ਸਮੇਂ ਮੁੱਖ ਸਮਾਗਮ ਹੈ।' },
       nagarKirtan2026Page: punjabiNagarKirtan2026,
     libraryPage: { title: 'ਲਾਇਬ੍ਰੇਰੀ', intro: 'ਗੁਰਬਾਣੀ, ਸਿੱਖ ਇਤਿਹਾਸ ਅਤੇ ਇਸ ਪਰੰਪਰਾ ਨਾਲ ਜੁੜੇ ਆਤਮਿਕ ਵਿਅਕਤੀਆਂ ਬਾਰੇ ਸਿੱਖਿਆ ਅਤੇ ਹਵਾਲਾ ਸਮੱਗਰੀ।', sections: punjabiLibrary, libraryBanner: 'ਗੁਰਦੁਆਰੇ ਦੇ ਹੇਠਾਂ ਸਥਿਤ ਡਾ. ਬੀ. ਆਰ. ਅੰਬੇਡਕਰ ਲਾਇਬ੍ਰੇਰੀ ਸਿੱਖਿਆ ਅਤੇ ਭਾਈਚਾਰਕ ਸਿੱਖਣ ਲਈ ਹੈ।' },
