@@ -5,6 +5,8 @@ import GlassCard from "@/components/ui/GlassCard.astro";
 
 import SectionHeader from "@/components/ui/SectionHeader.astro";
 
+import AnimatedParadeMap from "@/components/ui/AnimatedParadeMap.astro";
+
 import type { Locale } from "@/data/site";
 
 const { locale } = Astro.props as { locale: Locale };
@@ -86,13 +88,34 @@ const linkedIntro = page.intro.split('\n\n').map((paragraph) => {
         </div>
     </GlassCard>
 
-
         <GlassCard class="map-card">
+            <SectionHeader title={content.labels.map} />
+
+            <div class="map-container"  style=`height: 200px;`>
+                <div class="map-placeholder">
+                    Nagar Kirtan 2026 Map
+                </div>
+
+                <!-- iframe
+                    src="https://www.google.com/maps/d/embed?mid=1C41yBnDOH7ilNlh8hNjIgKV0JkQYFwU&ehbc=2E312F&ehbc=2E312F"
+                    width="100%"
+                    allowfullscreen
+                    loading="lazy"
+					style="opacity: 0.7;"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    title="Shri Guru Ravidass Temple Gurbani Sagar location map"
+                ></iframe -->
+				<AnimatedParadeMap height="300px" />
+            </div>
+        </GlassCard>
+
+
+        <!-- GlassCard class="map-card">
             <SectionHeader title={page.mapTitle} />
             <div class="image-container">
                 <div class="image-placeholder">Image loading...</div>
             </div>
-        </GlassCard>
+        </GlassCard -->
 
 	</section>
 	

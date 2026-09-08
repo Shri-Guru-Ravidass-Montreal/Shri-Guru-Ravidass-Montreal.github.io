@@ -1,0 +1,475 @@
+---
+interface Props {
+  height?: string;
+  zoom?: number;
+}
+
+const {
+  height = "200px",
+  zoom = 15,
+} = Astro.props;
+---
+
+<div class="parade-map-wrapper"  style={`height: ${height};`}>
+  <div
+    id="parade-map"
+    class="parade-map"
+    style={`height: ${height};`}
+    data-zoom={zoom}
+  ></div>
+</div>
+
+<style>
+  .parade-map-wrapper {
+    z-index: 1;
+    width: 100%;
+    border: 0;
+    outline: 1px dashed rgba(255, 255, 255, 0.32);
+    outline-offset: -1px;
+  }
+
+  .parade-map {
+    width: 100%;
+    opacity: 0.7;
+  }
+
+  /* The animated parade marker */
+  :global(.parade-marker) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: white;
+    border: 3px solid currentColor;
+
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 0 0 5px rgba(255, 255, 255, 0.35);
+
+    font-size: 15px;
+  }
+
+  :global(.start-marker),
+  :global(.end-marker) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: white;
+    border: 3px solid #222;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+    font-size: 12px;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  import L from "leaflet";
+  import "leaflet/dist/leaflet.css";
+
+  /*
+   * ============================================================
+   * PARADE ROUTE
+   * ============================================================
+   *
+   * Replace these coordinates with your actual route.
+   *
+   * Format:
+   * [latitude, longitude]
+   *
+   * Add as many points as necessary.
+   *
+   * For a smooth route, use points following the actual streets.
+   */
+
+const route: [number, number][] = [
+  // START — in front of 8205 Rue Durocher
+  [45.53315, -73.637],
+
+  [45.53395, -73.6397],
+
+  // CORNER — Durocher / de Liège
+  [45.534217, -73.641244],
+
+  // CORNER — de Liège / Querbes
+  [45.53374, -73.6415],
+
+  [45.53287, -73.6383],
+  // CORNER — Jarry / Querbes
+  [45.53205, -73.63553],
+
+  // RETURN — toward 8205 Durocher
+  [45.53265, -73.63523],
+
+  // FINAL — slightly east of the starting point
+  // Creates a visible gap instead of ending exactly on START
+  [45.53295, -73.63625],
+];
+
+  /*
+   * ============================================================
+   * SETTINGS
+   * ============================================================
+   */
+
+  const animationDuration = 30000; // 30 seconds for entire route
+
+  const mapElement = document.querySelector(
+    "#parade-map"
+  ) as HTMLElement | null;
+
+  if (!mapElement) {
+    throw new Error("Parade map element not found.");
+  }
+
+  /*
+   * ============================================================
+   * MAP
+   * ============================================================
+   */
+
+  const zoom = Number(mapElement.dataset.zoom ?? 15);
+
+  const map = L.map(mapElement, {
+    zoomControl: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+  });
+
+  /*
+   * OpenStreetMap tiles.
+   *
+   * This is free for reasonable use.
+   */
+
+  L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+      maxZoom: 16,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }
+  ).addTo(map);
+
+  /*
+   * ============================================================
+   * ROUTE
+   * ============================================================
+   */
+
+  const routeLatLngs = route.map(
+    ([lat, lng]) => L.latLng(lat, lng)
+  );
+
+  const bounds = L.latLngBounds(routeLatLngs);
+
+  map.fitBounds(bounds, {
+    padding: [40, 40],
+  });
+
+  map
+
+  map.setView(
+  [45.5324, -73.63835],
+  16
+);
+
+  /*
+   * Full route underneath.
+   */
+
+  const fullRoute = L.polyline(routeLatLngs, {
+    weight: 6,
+    color: "#5d7cff",
+    opacity: 0.5,
+    lineCap: "round",
+    lineJoin: "round",
+  }).addTo(map);
+
+  /*
+   * Highlighted section behind the moving marker.
+   */
+
+  const travelledRoute = L.polyline([], {
+    weight: 7,
+    color: "#5d7cff",
+    opacity: 1,
+    lineCap: "round",
+    lineJoin: "round",
+  }).addTo(map);
+
+  /*
+   * ============================================================
+   * START / END MARKERS
+   * ============================================================
+   */
+
+  const startIcon = L.divIcon({
+    className: "",
+    html: `<div class="start-marker">🚶</div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+  });
+
+  const endIcon = L.divIcon({
+    className: "",
+    html: `<div class="end-marker">🛑</div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+  });
+
+  L.marker(routeLatLngs[0], {
+    icon: startIcon,
+  })
+    .addTo(map)
+    .bindTooltip("Start", {
+      direction: "top",
+    });
+
+  L.marker(routeLatLngs[routeLatLngs.length - 1], {
+    icon: endIcon,
+  })
+    .addTo(map)
+    .bindTooltip("End", {
+      direction: "top",
+    });
+
+  /*
+   * ============================================================
+   * MOVING PARADE MARKER
+   * ============================================================
+   */
+
+  const paradeIcon = L.divIcon({
+    className: "",
+    html: `<div class="parade-marker">📖</div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+  });
+
+  const paradeMarker = L.marker(routeLatLngs[0], {
+    icon: paradeIcon,
+    zIndexOffset: 1000,
+  }).addTo(map);
+
+  /*
+   * ============================================================
+   * ROUTE DISTANCE CALCULATION
+   * ============================================================
+   *
+   * We calculate the distance between every point.
+   * This makes the animation move at roughly constant speed
+   * even when the route points are unevenly spaced.
+   */
+
+  const distances: number[] = [0];
+
+  for (let i = 1; i < routeLatLngs.length; i++) {
+    const distance =
+      routeLatLngs[i - 1].distanceTo(routeLatLngs[i]);
+
+    distances.push(
+      distances[i - 1] + distance
+    );
+  }
+
+  const totalDistance =
+    distances[distances.length - 1];
+
+  /*
+   * ============================================================
+   * INTERPOLATION
+   * ============================================================
+   */
+
+  function positionAtDistance(
+    targetDistance: number
+  ): L.LatLng {
+    if (targetDistance <= 0) {
+      return routeLatLngs[0];
+    }
+
+    if (targetDistance >= totalDistance) {
+      return routeLatLngs[routeLatLngs.length - 1];
+    }
+
+    let segment = 1;
+
+    while (
+      distances[segment] < targetDistance &&
+      segment < distances.length - 1
+    ) {
+      segment++;
+    }
+
+    const segmentStart =
+      distances[segment - 1];
+
+    const segmentEnd =
+      distances[segment];
+
+    const segmentLength =
+      segmentEnd - segmentStart;
+
+    const progress =
+      (targetDistance - segmentStart) /
+      segmentLength;
+
+    return L.latLng(
+      routeLatLngs[segment - 1].lat +
+        (routeLatLngs[segment].lat -
+          routeLatLngs[segment - 1].lat) *
+          progress,
+
+      routeLatLngs[segment - 1].lng +
+        (routeLatLngs[segment].lng -
+          routeLatLngs[segment - 1].lng) *
+          progress
+    );
+  }
+
+  /*
+   * ============================================================
+   * BUILD TRAVELLED ROUTE
+   * ============================================================
+   */
+
+  function buildTravelledRoute(
+    targetDistance: number
+  ): L.LatLng[] {
+    const points: L.LatLng[] = [];
+
+    for (let i = 0; i < routeLatLngs.length; i++) {
+      if (distances[i] <= targetDistance) {
+        points.push(routeLatLngs[i]);
+      }
+    }
+
+    points.push(
+      positionAtDistance(targetDistance)
+    );
+
+    return points;
+  }
+// ============================================================
+// SCROLL-DRIVEN PARADE ANIMATION
+// ============================================================
+//
+// The MAP itself controls the animation.
+//
+// Map top reaches 1.2 viewport heights → START
+// Map top reaches 2.0 viewport heights → END
+//
+// This is based on the map's actual position,
+// rather than window.scrollY.
+//
+// ============================================================
+
+function updateParadeFromScroll() {
+  const rect = mapElement.getBoundingClientRect();
+
+  const viewportHeight = window.innerHeight;
+
+  /*
+   * Distance from the top of the viewport
+   * at which the animation starts.
+   */
+  const startPosition =
+    viewportHeight - rect.height;
+
+  /*
+   * Distance from the top of the viewport
+   * at which the animation finishes.
+   */
+  const endPosition = 0;
+
+  /*
+   * rect.top decreases as the page scrolls upward.
+   *
+   * At start:
+   *
+   * rect.top = 1.2 × viewport
+   *
+   * At end:
+   *
+   * rect.top = 0.2 × viewport
+   *
+   * Therefore the animation happens over
+   * exactly one viewport height of scrolling.
+   */
+
+  const progress =
+    (startPosition - rect.top) /
+    (startPosition - endPosition);
+
+  /*
+   * Clamp between 0 and 1.
+   */
+  const clampedProgress =
+    Math.max(
+      0,
+      Math.min(1, progress)
+    );
+
+  /*
+   * Convert progress into distance
+   * along the parade route.
+   */
+  const distance =
+    totalDistance *
+    clampedProgress;
+
+  /*
+   * Move the parade marker.
+   */
+  const position =
+    positionAtDistance(distance);
+
+  paradeMarker.setLatLng(position);
+
+  /*
+   * Draw the travelled portion.
+   */
+  travelledRoute.setLatLngs(
+    buildTravelledRoute(distance)
+  );
+}
+
+
+/*
+ * Update while scrolling.
+ */
+window.addEventListener(
+  "scroll",
+  updateParadeFromScroll,
+  { passive: true }
+);
+
+
+/*
+ * Recalculate when the browser changes size.
+ */
+window.addEventListener(
+  "resize",
+  updateParadeFromScroll
+);
+
+
+/*
+ * Initial position.
+ */
+updateParadeFromScroll();
+
+</script>
