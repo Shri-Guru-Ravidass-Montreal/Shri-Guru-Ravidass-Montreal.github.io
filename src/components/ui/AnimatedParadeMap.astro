@@ -378,7 +378,11 @@ const route: [number, number][] = [
 // ============================================================
 
 function updateParadeFromScroll() {
-  const rect = mapElement.getBoundingClientRect();
+  const rect = mapElement?.getBoundingClientRect();
+
+  if (!rect) {
+    return;
+  }
 
   const viewportHeight = window.innerHeight;
 

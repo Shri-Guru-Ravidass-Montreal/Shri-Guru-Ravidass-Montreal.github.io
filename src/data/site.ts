@@ -58,7 +58,7 @@ const staff: StaffMember[] = [
 const punjabiStaff: StaffMember[] = [
   { role: 'ਪ੍ਰਧਾਨ', name: 'ਸੰਸਾਰ ਚੰਦ ਸੁਆਣ', phoneDisplay: '438-871-7777', phoneHref: 'tel:+14388717777' },
   { role: 'ਵਾਈਸ ਪ੍ਰਧਾਨ', name: 'ਬਿੰਦਰ ਚੰਦੜ', phoneDisplay: '514-571-9548', phoneHref: 'tel:+15145719548' },
-  { role: 'ਜਨਰਲ ਸਕੱਤਰ', name: 'ਸਾਮੀ ਬੰਗਾ', phoneDisplay: '514-296-7251', phoneHref: 'tel:+15142967251' },
+  { role: 'ਜਨਰਲ ਸਕੱਤਰ', name: 'ਸ਼ਾਮੀ ਬੰਗਾ', phoneDisplay: '514-296-7251', phoneHref: 'tel:+15142967251' },
 ];
 
 const footerLinks: Record<Locale, FooterLinkGroup[]> = {
@@ -224,8 +224,8 @@ const punjabiLibrary = [
 
 ];
 
-const form = { address: '8205 Durocher, Montreal, QC H3N 2A8', hoursTitle: 'Opening Hours', hours: ['Weekdays 4:00 AM - 9:00 PM', 'Friday & Saturday Night 24h '], langarTitle: 'Langar Hours', langarHours: ['1:00 PM - 8:30 PM', 'Friday & Saturday From 10:00 AM'], conductTitle: 'Etiquette & Guidelines', conduct: ['Please dress appropriately; Pants need to be under knee-length.', 'Please leave your shoes in the cloakroom and wash your feet before entering any other room.', 'You will be asked to cover your head with a cloth; Handkerchiefs are available on-site.'], formTitle: 'Inquiries & Booking', formIntro: 'Use this form for a general inquiry, service inquiry, or event/service booking.', name: 'Name', email: 'Email', type: 'Inquiry type', typeOptions: ['General inquiry', 'Service inquiry', 'Event/service booking'], service: 'Service', serviceOptions: services.map(({ title }) => title), message: 'Message', submit: 'Send inquiry' };
-const punjabiForm = { address: '8205 ਡੂਰੋਸ਼ਰ, ਮੋਂਟਰੀਅਲ, ਕਿਊਬੈਕ H3N 2A8', hoursTitle: 'ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ', hours: ['ਹਫ਼ਤੇ ਦੇ ਦਿਨ ਸਵੇਰੇ 4:00 ਵਜੇ ਤੋਂ ਰਾਤ 9:00 ਵਜੇ ਤੱਕ', 'ਸ਼ੁੱਕਰਵਾਰ ਅਤੇ ਸ਼ਨੀਵਾਰ ਰਾਤ 24 ਘੰਟੇ'], langarTitle: 'ਲੰਗਰ ਦਾ ਸਮਾਂ', langarHours: ['ਦੁਪਹਿਰ 1:00 ਵਜੇ ਤੋਂ ਰਾਤ 8:30 ਵਜੇ ਤੱਕ', 'ਸ਼ੁੱਕਰਵਾਰ ਅਤੇ ਸ਼ਨੀਵਾਰ ਸਵੇਰੇ 10:00 ਵਜੇ ਤੋਂ'], conductTitle: 'ਮਰਿਆਦਾ ਅਤੇ ਹਦਾਇਤਾਂ', conduct: ['ਕਿਰਪਾ ਕਰਕੇ ਢੁਕਵੇਂ ਕੱਪੜੇ ਪਹਿਨੋ। ਪੈਂਟ ਗੋਡਿਆਂ ਤੋਂ ਹੇਠਾਂ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।', 'ਜੁੱਤੀਆਂ ਬਾਹਰ ਰੱਖੋ ਅਤੇ ਪ੍ਰਾਰਥਨਾ ਵਾਲੇ ਸਥਾਨ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਪੈਰ ਧੋਵੋ।', 'ਸਿਰ ਢੱਕਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਰੁਮਾਲ ਅਤੇ ਸਿਰ ਢੱਕਣ ਲਈ ਕੱਪੜੇ ਇੱਥੇ ਉਪਲਬਧ ਹਨ।'], formTitle: 'ਪੁੱਛਗਿੱਛ ਅਤੇ ਬੁਕਿੰਗ', formIntro: 'ਆਮ ਪੁੱਛਗਿੱਛ, ਸੇਵਾ ਜਾਂ ਸਮਾਗਮ/ਸੇਵਾ ਬੁਕਿੰਗ ਲਈ ਇਹ ਫਾਰਮ ਵਰਤੋ।', name: 'ਨਾਮ', email: 'ਈਮੇਲ', type: 'ਪੁੱਛਗਿੱਛ ਦੀ ਕਿਸਮ', typeOptions: ['ਆਮ ਪੁੱਛਗਿੱਛ', 'ਸੇਵਾ ਸੰਬੰਧੀ ਪੁੱਛਗਿੱਛ', 'ਸਮਾਗਮ/ਸੇਵਾ ਬੁਕਿੰਗ'], service: 'ਸੇਵਾ', serviceOptions: punjabiServices.map(({ title }) => title), message: 'ਸੁਨੇਹਾ', submit: 'ਪੁੱਛਗਿੱਛ ਭੇਜੋ' };
+const form = { address: '8205 Durocher, Montreal, QC H3N 2A8', hoursTitle: 'Opening Hours', hours: ['Weekdays 4:00 AM - 9:00 PM', 'Friday & Saturday Night 24h '], langarTitle: 'Langar Hours', langarHours: ['1:00 PM - 8:30 PM', 'Saturday & Sunday From 10:00 AM'], conductTitle: 'Etiquette & Guidelines', conduct: ['Please dress appropriately; Pants need to be under knee-length.', 'Please leave your shoes in the cloakroom and wash your feet before entering any other room.', 'You will be asked to cover your head with a cloth; Handkerchiefs are available on-site.'], formTitle: 'Inquiries & Booking', formIntro: 'Use this form for a general inquiry, service inquiry, or event/service booking.', name: 'Name', email: 'Email', type: 'Inquiry type', typeOptions: ['General inquiry', 'Service inquiry', 'Event/service booking'], service: 'Service', serviceOptions: services.map(({ title }) => title), message: 'Message', submit: 'Send inquiry' };
+const punjabiForm = { address: '8205 ਡੂਰੋਸ਼ਰ, ਮੋਂਟਰੀਅਲ, ਕਿਊਬੈਕ H3N 2A8', hoursTitle: 'ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ', hours: ['ਹਫ਼ਤੇ ਦੇ ਦਿਨ ਸਵੇਰੇ 4:00 ਵਜੇ ਤੋਂ ਰਾਤ 9:00 ਵਜੇ ਤੱਕ', 'ਸ਼ੁੱਕਰਵਾਰ ਅਤੇ ਸ਼ਨੀਵਾਰ ਰਾਤ 24 ਘੰਟੇ'], langarTitle: 'ਲੰਗਰ ਦਾ ਸਮਾਂ', langarHours: ['ਦੁਪਹਿਰ 1:00 ਵਜੇ ਤੋਂ ਰਾਤ 8:30 ਵਜੇ ਤੱਕ', 'ਸ਼ਨੀਵਾਰ ਅਤੇ ਐਤਵਾਰ ਸਵੇਰੇ 10:00 ਵਜੇ ਤੋਂ'], conductTitle: 'ਮਰਿਆਦਾ ਅਤੇ ਹਦਾਇਤਾਂ', conduct: ['ਕਿਰਪਾ ਕਰਕੇ ਢੁਕਵੇਂ ਕੱਪੜੇ ਪਹਿਨੋ। ਪੈਂਟ ਗੋਡਿਆਂ ਤੋਂ ਹੇਠਾਂ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।', 'ਜੁੱਤੀਆਂ ਬਾਹਰ ਰੱਖੋ ਅਤੇ ਪ੍ਰਾਰਥਨਾ ਵਾਲੇ ਸਥਾਨ ਵਿੱਚ ਦਾਖਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਪੈਰ ਧੋਵੋ।', 'ਸਿਰ ਢੱਕਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਰੁਮਾਲ ਅਤੇ ਸਿਰ ਢੱਕਣ ਲਈ ਕੱਪੜੇ ਇੱਥੇ ਉਪਲਬਧ ਹਨ।'], formTitle: 'ਪੁੱਛਗਿੱਛ ਅਤੇ ਬੁਕਿੰਗ', formIntro: 'ਆਮ ਪੁੱਛਗਿੱਛ, ਸੇਵਾ ਜਾਂ ਸਮਾਗਮ/ਸੇਵਾ ਬੁਕਿੰਗ ਲਈ ਇਹ ਫਾਰਮ ਵਰਤੋ।', name: 'ਨਾਮ', email: 'ਈਮੇਲ', type: 'ਪੁੱਛਗਿੱਛ ਦੀ ਕਿਸਮ', typeOptions: ['ਆਮ ਪੁੱਛਗਿੱਛ', 'ਸੇਵਾ ਸੰਬੰਧੀ ਪੁੱਛਗਿੱਛ', 'ਸਮਾਗਮ/ਸੇਵਾ ਬੁਕਿੰਗ'], service: 'ਸੇਵਾ', serviceOptions: punjabiServices.map(({ title }) => title), message: 'ਸੁਨੇਹਾ', submit: 'ਪੁੱਛਗਿੱਛ ਭੇਜੋ' };
 
 
 const englishNagarKirtan2026 = {
@@ -329,7 +329,7 @@ const punjabiNagarKirtan2026 = {
       },
     ],
 
-    mapTitle: 'ਨਕਸ਼ਾ',
+    mapTitle: 'ਮਾਰਗ',
 
     gatheringTitle: 'ਇਸ ਮਹਾਨ ਸਮਾਗਮ ਵਿੱਚ',
     gathering: 'ਇਸ ਮਹਾਨ ਸਮਾਗਮ ਵਿੱਚ ਸਿੱਖ ਕੌਮ ਦੇ ਮਹਾਨ ਕੀਰਤਨੀਏ, ਰਾਗੀ, ਢਾਡੀ ਅਤੇ ਪ੍ਰਚਾਰਕ ਗੁਰੂ ਜੱਸ ਰਾਹੀਂ ਸੰਗਤਾਂ ਨੂੰ ਨਿਹਾਲ ਕਰਨਗੇ।\n\nਸਮੂਹ ਗੁਰਦੁਆਰਿਆਂ, ਮੰਦਰਾਂ, ਮਸਜਿਦਾਂ, ਚਰਚਾਂ, ਸੰਸਥਾਵਾਂ ਅਤੇ ਸਾਧ-ਸੰਗਤ ਦੀ ਸੇਵਾ ਵਿੱਚ ਬੇਨਤੀ ਹੈ ਕਿ ਇਸ ਮਹਾਨ ਨਗਰ ਕੀਰਤਨ ਵਿੱਚ ਸ਼ਾਮਿਲ ਹੋਣ ਲਈ ਹੁੰਮ ਹੁਮਾ ਕੇ ਪਹੁੰਚੋ ਅਤੇ ਤਨ, ਮਨ, ਧਨ ਨਾਲ ਸੇਵਾ ਕਰਕੇ ਗੁਰੂ ਮਹਾਰਾਜ ਦੀਆਂ ਖੁਸ਼ੀਆਂ ਪ੍ਰਾਪਤ ਕਰੋ ਜੀ।\n\nਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਸੰਪਰਕ ਕਰੋ ਜੀ।',
@@ -361,7 +361,7 @@ export const siteContent = {
     meta: { title: 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ | ਮੋਂਟਰੀਅਲ', description: 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ ਮੋਂਟਰੀਅਲ ਦੀ ਵੈੱਬਸਾਈਟ।' },
     nav: { home: 'ਮੁੱਖ ਪੰਨਾ', events: 'ਸਮਾਗਮ', library: 'ਲਾਇਬ੍ਰੇਰੀ', reach: 'ਸੰਪਰਕ' },
     labels: { learnMore: 'ਹੋਰ ਜਾਣੋ', inquire: 'ਪੁੱਛਗਿੱਛ ਅਤੇ ਬੁਕਿੰਗ', details: 'ਸਮਾਗਮ ਦੀ ਜਾਣਕਾਰੀ', books: '“ਲਾਇਬ੍ਰੇਰੀ ਦੀਆਂ ਕਿਤਾਬਾਂ ਵੇਖੋ”', servicesTitle: 'ਸੇਵਾਵਾਂ', servicesIntro: 'ਜਾਣਕਾਰੀ, ਪ੍ਰਬੰਧਾਂ ਅਤੇ ਬੁਕਿੰਗ ਲਈ ਗੁਰਦੁਆਰੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।', calendarLabel: 'ਕੈਲੰਡਰ', calendarPlaceholder: 'ਗੂਗਲ ਕੈਲੰਡਰ ਜੋੜਨ ਤੋਂ ਬਾਅਦ ਇੱਥੇ ਦਿਖਾਈ ਦੇਵੇਗਾ।', locationTitle: 'ਸਥਾਨ ਅਤੇ ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ', map: 'ਨਕਸ਼ਾ', parking: 'ਪਾਰਕਿੰਗ ਦੀ ਜਾਣਕਾਰੀ', selectService: 'ਸੇਵਾ ਚੁਣੋ'},
-    event: { title: 'ਹਰਿ ਮਹਾਨ ਨਗਰ ਕੀਰਤਨ', date: '06 ਸਤੰਬਰ 2026 ਦਿਨ ਐਤਵਾਰ', description: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ 422 ਵੇਂ ਪ੍ਰਕਾਸ਼ ਦਿਹਾੜੇ ਅਤੇ ਧੰਨ ਧੰਨ ਸ੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਮਹਾਰਾਜ ਦੇ 649 ਵੇਂ ਪ੍ਰਕਾਸ਼ ਪੁਰਬ ਨੂੰ ਸਮਰਪਿਤ।', button: 'ਸਮਾਗਮ ਦੀ ਜਾਣਕਾਰੀ', href: routes.pa.nagarkirtan }, services: punjabiServices, staff: punjabiStaff,
+    event: { title: 'ਹਰਿ ਮਹਾਨ ਨਗਰ ਕੀਰਤਨ', date: '06 ਸਤੰਬਰ 2026 ਦਿਨ ਐਤਵਾਰ', description: 'ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ 422 ਵੇਂ ਅਤੇ ਸ੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਮਹਾਰਾਜ ਦੇ 649 ਵੇਂ ਪ੍ਰਕਾਸ਼ ਪੁਰਬ ਨੂੰ ਸਮਰਪਿਤ।', button: 'ਸਮਾਗਮ ਦੀ ਜਾਣਕਾਰੀ', href: routes.pa.nagarkirtan }, services: punjabiServices, staff: punjabiStaff,
     home: { eyebrow: 'ਮੋਂਟਰੀਅਲ ਸੰਗਤ', title: 'ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਸਾਂਝੀ ਅਰਦਾਸ ਲਈ ਥਾਂ।', intro: 'ਸ਼੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਟੈਂਪਲ ਸੰਗਤ ਨੂੰ ਭਗਤੀ, ਸਿੱਖਿਆ ਅਤੇ ਸੇਵਾ ਦੀ ਭਾਵਨਾ ਨਾਲ ਜੋੜਦਾ ਹੈ।', aboutTitle: 'ਸਾਡੇ ਬਾਰੇ', about: ['1997 ਤੋਂ ਸਾਡੀ ਸੰਗਤ ਇਕੱਠੀ ਹੋ ਕੇ, ਆਪਣੇ ਗੁਰੂ ਘਰ ਦੀ ਨੀਂਹ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰਦੀ ਆ ਰਹੀ ਹੈ।', 'ਅੱਜ ਇਹ ਅਧਿਆਤਮਿਕਤਾ ਅਤੇ ਸਿੱਖਿਆ ਦਾ ਇੱਕ ਜੀਵੰਤ ਕੇਂਦਰ ਹੈ, ਜੋ ਸ੍ਰੀ ਗੁਰੂ ਰਵਿਦਾਸ ਜੀ ਦੀ ਬਾਣੀ ਅਤੇ ਸਿਧਾਂਤਾਂ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ।', 'ਇਹ ਆਉਣ ਵਾਲੀਆਂ ਪੀੜ੍ਹੀਆਂ ਲਈ ਇੱਕ ਮਜ਼ਬੂਤ ਨੀਂਹ ਹੈ, ਜਿਸ ਰਾਹੀਂ ਸੰਗਤ, ਸੇਵਾ ਅਤੇ ਗੁਰਮਤਿ ਦਾ ਸਿਲਸਿਲਾ ਅੱਗੇ ਵਧਦਾ ਰਹੇ।'] , helpTitle: 'ਮਦਦ ਕਿਵੇਂ ਕਰੀਏ', help: 'ਸੇਵਾ ਨਿਮਰਤਾ ਅਤੇ ਪਿਆਰ ਨਾਲ ਕੀਤੀ ਜਾਣ ਵਾਲੀ ਸਵੈ-ਇੱਛਕ ਸੇਵਾ ਹੈ। ਨਵੇਂ ਸੇਵਾਦਾਰ ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਸੇਵਾਦਾਰਾਂ ਦੀ ਰਹਿਨੁਮਾਈ ਅਤੇ ਪ੍ਰਕਿਰਿਆ ਦੀ ਪਾਲਣਾ ਕਰਨ। ਦਾਨ ਵੀ ਮਦਦ ਦਾ ਇੱਕ ਰਸਤਾ ਹੈ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਸੰਪਰਕ ਕਰੋ।' },
     eventsPage: { title: 'ਸਮਾਗਮ', intro: 'ਗੁਰਦੁਆਰੇ ਦੇ ਸਮਾਗਮ ਅਤੇ ਸੰਗਤ ਨਾਲ ਜੁੜੀਆਂ ਜਾਣਕਾਰੀਆਂ।', nextTitle: 'ਅਗਲਾ ਸਮਾਗਮ', scheduleTitle: 'ਗੂਗਲ ਸਮਾਂ-ਸੂਚੀ', scheduleBody: 'ਰੋਜ਼ਾਨਾ: ਰਹਿਰਾਸ ਸਾਹਿਬ ਪਾਠ @ ਸ਼ਾਮ 7:00 ਵਜੇ - 7:30 ਵਜੇ', pastTitle: 'ਪੁਰਾਣੇ ਅਤੇ ਆਉਣ ਵਾਲੇ ਸਮਾਗਮ', pastBody: 'ਨਗਰ ਕੀਰਤਨ ਇਸ ਸਮੇਂ ਮੁੱਖ ਸਮਾਗਮ ਹੈ।' },
       nagarKirtan2026Page: punjabiNagarKirtan2026,
