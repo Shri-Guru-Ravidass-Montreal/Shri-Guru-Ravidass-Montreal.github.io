@@ -1,0 +1,18 @@
+---
+import type { EventData } from '../../data/site';
+import { Image } from 'astro:assets';
+import templePlaceholder from '../../assets/logo-white.png';
+
+interface Props { event: EventData; }
+const { event } = Astro.props;
+---
+
+<a href={event.href} class="service-card past-event-card">
+  <Image src={templePlaceholder} alt="" width={700} height={700} format="webp" style="opacity: 0.1;" class="service-card-image" />
+  <span class="service-card-shade"></span>
+  <span class="service-card-content">
+    <strong>{event.title}</strong>
+    <span class="past-event-card__date">{event.date}</span>
+    <span>{event.description}</span>
+  </span>
+</a>

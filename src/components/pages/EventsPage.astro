@@ -1,6 +1,7 @@
 ---
-import { siteContent } from "../../data/site";
+import { pastEvents, siteContent } from "../../data/site";
 import EventCard from "../ui/EventCard.astro";
+import PastEventCard from "../ui/PastEventCard.astro";
 import GlassCard from "../ui/GlassCard.astro";
 import SectionHeader from "../ui/SectionHeader.astro";
 import type { Locale } from "../../data/site";
@@ -49,6 +50,9 @@ const content = siteContent[locale];
         <GlassCard>
             <SectionHeader title={content.eventsPage.pastTitle} />
             <p class="card-copy">{content.eventsPage.pastBody}</p>
+            <div class="past-events">
+                {pastEvents[locale].map((event) => <PastEventCard event={event} />)}
+            </div>
         </GlassCard>
     </section>
 </div>
